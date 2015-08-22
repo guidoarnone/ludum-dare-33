@@ -1,0 +1,1953 @@
+fileFormatVersion: 2
+guid: 4e212dfef37558847a6e4fd5ed706e02
+timeCreated: 1440269099
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armario o algo
+    100002: Armarito o algo
+    100004: Base
+    100006: Box001
+    100008: Box001 1
+    100010: Box002
+    100012: Box003
+    100014: Box004
+    100016: Box004 1
+    100018: Box005
+    100020: Box005 1
+    100022: Box006
+    100024: Box007
+    100026: Box007 1
+    100028: Box008
+    100030: Box008 1
+    100032: Box009
+    100034: Box010
+    100036: Box011
+    100038: Box012
+    100040: Box013
+    100042: Box014
+    100044: Box015
+    100046: Box016
+    100048: Box017
+    100050: Box017 1
+    100052: Box018
+    100054: Box018 1
+    100056: Box019
+    100058: Box019 1
+    100060: Box020
+    100062: Box020 1
+    100064: Box021
+    100066: Box021 1
+    100068: Box022
+    100070: Box022 1
+    100072: Box023
+    100074: Box023 1
+    100076: Box024
+    100078: Box024 1
+    100080: Box025
+    100082: Box025 1
+    100084: Box026
+    100086: Box026 1
+    100088: Box027
+    100090: Box027 1
+    100092: Box028
+    100094: Box028 1
+    100096: Box029
+    100098: Box029 1
+    100100: Box030
+    100102: Box030 1
+    100104: Box031
+    100106: Box032
+    100108: Box033
+    100110: Box034
+    100112: Box035
+    100114: Box036
+    100116: Box037
+    100118: Box037 1
+    100120: Box038
+    100122: Box038 1
+    100124: Box039
+    100126: Box039 1
+    100128: Box040
+    100130: Box040 1
+    100132: Box041
+    100134: Box041 1
+    100136: Box042
+    100138: Box042 1
+    100140: Box043
+    100142: Box043 1
+    100144: Box044
+    100146: Box045
+    100148: Box046
+    100150: Box047
+    100152: Box050
+    100154: Box051
+    100156: Box052
+    100158: Box053
+    100160: Box054
+    100162: Box055
+    100164: Box056
+    100166: Box057
+    100168: Box058
+    100170: Box059
+    100172: Box060
+    100174: Box061
+    100176: Box062
+    100178: Box063
+    100180: Box064
+    100182: Box065
+    100184: Box066
+    100186: Box067
+    100188: Box068
+    100190: Box069
+    100192: Box071
+    100194: Box072
+    100196: Box073
+    100198: Box074
+    100200: Box075
+    100202: Box076
+    100204: Box078
+    100206: Box079
+    100208: Box080
+    100210: Box081
+    100212: Box082
+    100214: Box083
+    100216: Box084
+    100218: Box085
+    100220: Box086
+    100222: Box087
+    100224: Box088
+    100226: Box089
+    100228: Box090
+    100230: Box091
+    100232: Box092
+    100234: Box093
+    100236: Box094
+    100238: Box095
+    100240: Box096
+    100242: Box097
+    100244: Caja inicio
+    100246: Camuflaje Tematico
+    100248: Camuflaje tematico
+    100250: Camuflaje Tematico001
+    100252: Camuflaje Tematico002
+    100254: Camuflaje Tematico003
+    100256: Camuflaje Tematico004
+    100258: Camuflaje Tematico005
+    100260: Camuflaje tematico005
+    100262: Camuflaje Tematico006
+    100264: Camuflaje tematico006
+    100266: Camuflaje Tematico007
+    100268: Camuflaje Tematico008
+    100270: Camuflaje tematico008
+    100272: Camuflaje Tematico009
+    100274: Camuflaje tematico01
+    100276: Camuflaje Tematico010
+    100278: Camuflaje tematico010
+    100280: Camuflaje tematico011
+    100282: Camuflaje tematico012
+    100284: Camuflaje Tematico013
+    100286: Camuflaje tematico013
+    100288: Camuflaje Tematico014
+    100290: Camuflaje tematico014
+    100292: Camuflaje Tematico015
+    100294: Camuflaje tematico015
+    100296: Camuflaje Tematico016
+    100298: Camuflaje tematico016
+    100300: Camuflaje Tematico017
+    100302: Camuflaje tematico017
+    100304: Camuflaje Tematico018
+    100306: Camuflaje tematico018
+    100308: Camuflaje Tematico019
+    100310: Camuflaje tematico019
+    100312: Camuflaje tematico02
+    100314: Camuflaje Tematico020
+    100316: Camuflaje tematico020
+    100318: Camuflaje Tematico021
+    100320: Camuflaje tematico021
+    100322: Camuflaje Tematico022
+    100324: Camuflaje tematico022
+    100326: Camuflaje Tematico023
+    100328: Camuflaje tematico023
+    100330: Camuflaje tematico024
+    100332: Camuflaje tematico025
+    100334: Camuflaje tematico026
+    100336: Camuflaje tematico027
+    100338: Camuflaje tematico028
+    100340: Camuflaje tematico029
+    100342: Camuflaje tematico03
+    100344: Camuflaje tematico030
+    100346: Camuflaje tematico031
+    100348: Camuflaje tematico032
+    100350: Camuflaje tematico033
+    100352: Camuflaje tematico034
+    100354: Camuflaje tematico035
+    100356: Camuflaje tematico036
+    100358: Camuflaje tematico037
+    100360: Camuflaje tematico038
+    100362: Camuflaje tematico039
+    100364: Camuflaje tematico04
+    100366: Camuflaje tematico040
+    100368: Camuflaje tematico041
+    100370: Camuflaje tematico042
+    100372: Camuflaje tematico043
+    100374: Camuflaje tematico044
+    100376: Camuflaje tematico045
+    100378: Camuflaje tematico046
+    100380: Camuflaje tematico047
+    100382: Camuflaje tematico048
+    100384: Camuflaje tematico049
+    100386: Camuflaje tematico050
+    100388: Camuflaje tematico051
+    100390: Camuflaje tematico052
+    100392: Camuflaje tematico053
+    100394: Camuflaje tematico054
+    100396: Camuflaje tematico055
+    100398: Camuflaje tematico056
+    100400: Camuflaje tematico057
+    100402: Camuflaje tematico058
+    100404: Camuflaje tematico059
+    100406: Camuflaje tematico060
+    100408: Camuflaje tematico061
+    100410: Camuflaje tematico062
+    100412: Camuflaje tematico063
+    100414: Camuflaje tematico064
+    100416: Camuflaje tematico065
+    100418: Camuflaje tematico066
+    100420: Camuflaje tematico067
+    100422: Camuflaje tematico068
+    100424: Camuflaje tematico069
+    100426: Camuflaje tematico080
+    100428: Camuflaje tematico081
+    100430: Camuflaje tematico082
+    100432: Camuflaje tematico083
+    100434: Camuflaje tematico084
+    100436: Camuflaje tematico085
+    100438: Camuflaje tematico086
+    100440: Camuflaje tematico087
+    100442: Camuflaje tematico088
+    100444: Camuflaje tematico089
+    100446: Camuflaje tematico090
+    100448: Camuflaje tematico091
+    100450: Camuflaje tematico092
+    100452: Camuflaje tematico093
+    100454: Camuflaje tematico094
+    100456: Camuflaje tematico095
+    100458: Camuflaje tematico096
+    100460: Camuflaje tematico097
+    100462: Camuflaje tematico098
+    100464: Camuflaje tematico099
+    100466: Camuflaje tematico100
+    100468: Camuflaje tematico101
+    100470: Camuflaje tematico102
+    100472: Camuflaje tematico103
+    100474: Camuflaje tematico104
+    100476: Camuflaje tematico105
+    100478: Camuflaje tematico106
+    100480: Camuflaje tematico107
+    100482: Camuflaje tematico108
+    100484: Camuflaje tematico109
+    100486: Camuflaje tematico110
+    100488: Camuflaje tematico111
+    100490: Camuflaje tematico112
+    100492: Camuflaje tematico113
+    100494: Camuflaje tematico114
+    100496: Camuflaje tematico115
+    100498: Camuflaje tematico116
+    100500: Camuflaje tematico117
+    100502: Camuflaje tematico118
+    100504: Camuflaje tematico119
+    100506: Camuflaje tematico120
+    100508: Camuflaje tematico121
+    100510: Camuflaje tematico122
+    100512: Camuflaje tematico123
+    100514: Camuflaje tematico124
+    100516: Camuflaje tematico125
+    100518: Camuflaje tematico126
+    100520: Camuflaje tematico127
+    100522: Camuflaje tematico128
+    100524: Camuflaje tematico129
+    100526: Camuflaje tematico130
+    100528: Camuflaje tematico131
+    100530: Camuflaje tematico132
+    100532: Camuflaje tematico133
+    100534: Camuflaje tematico134
+    100536: Checkpoint
+    100538: Checkpoint001
+    100540: Checkpoint002
+    100542: Checkpoint003
+    100544: Checkpoint004
+    100546: Checkpoint005
+    100548: Cone001
+    100550: Cone002
+    100552: Cone003
+    100554: Cone004
+    100556: Cone005
+    100558: Cone006
+    100560: Cone007
+    100562: Cone008
+    100564: Cone009
+    100566: Cone010
+    100568: Cone011
+    100570: Cone012
+    100572: Cone013
+    100574: Cone014
+    100576: Cosas copadas futuristas o algo
+    100578: Cosas copadas futuristas o algo01
+    100580: Cosas copadas futuristas o algo02
+    100582: Cuadros o deco
+    100584: Cuadros o deco01
+    100586: Cuadros o deco02
+    100588: Cuarto
+    100590: Cylinder001
+    100592: Cylinder002
+    100594: Cylinder003
+    100596: Cylinder004
+    100598: Cylinder005
+    100600: Cylinder006
+    100602: Cylinder007
+    100604: Cylinder008
+    100606: Cylinder009
+    100608: Cylinder010
+    100610: Cylinder011
+    100612: Cylinder012
+    100614: 'Detalle un esculpido si se copan '
+    100616: Detalles repetidos
+    100618: Detalles repetidos001
+    100620: Detalles repetidos002
+    100622: Detalles repetidos003
+    100624: Detalles repetidos004
+    100626: Exit point
+    100628: Florero o algo
+    100630: //RootNode
+    100632: Libro u otro
+    100634: Libro u otro001
+    100636: Libro u otro002
+    100638: Line001
+    100640: Line002
+    100642: Line003
+    100644: Nu se
+    100646: Obstaculo, mata en contacto intermitente
+    100648: Obstaculo, mata en contacto intermitente001
+    100650: Obstaculo, mata en contacto intermitente002
+    100652: Obstaculo, mata en contacto intermitente003
+    100654: Obstaculo, mata en contacto intermitente004
+    100656: Particle View 001
+    100658: Particle View 001 1
+    100660: Pecera
+    100662: Plane001
+    100664: Plane002
+    100666: Plane002 1
+    100668: Plane003
+    100670: Plane003 1
+    100672: Plane004
+    100674: Plane005
+    100676: Plane006
+    100678: Plane007
+    100680: Plane008
+    100682: Plane009
+    100684: Plane010
+    100686: Plane011
+    100688: Plane012
+    100690: Plane013
+    100692: Plane014
+    100694: Plane015
+    100696: Plane016
+    100698: Plane017
+    100700: Plane018
+    100702: Plane019
+    100704: Plane020
+    100706: Plane021
+    100708: Plane022
+    100710: Plane023
+    100712: plantas etc
+    100714: plantas etc001
+    100716: plantas etc002
+    100718: plantas etc003
+    100720: Power
+    100722: Power start
+    100724: Power001
+    100726: Power002
+    100728: Power004
+    100730: Power005
+    100732: Rectangle001
+    100734: Regla u conector
+    100736: Sphere001
+    100738: StartZone
+    100740: Step
+    100742: Step01
+    100744: Step02
+    100746: Step03
+    100748: Step04
+    100750: Teapot001
+    100752: Teapot002
+    100754: Teapot003
+    100756: Teapot004
+    100758: Teapot005
+    100760: Teapot006
+    100762: Text001
+    100764: Text003
+    100766: Text004
+    100768: Torus001
+    100770: trampa raaton mina
+    100772: trampa raaton mina001
+    100774: trampa raaton mina002
+    100776: trigger tirar frasco o algo asi001
+    100778: trigger tirar frasco o algo asi002
+    100780: trigger tirar frasco o algo asi003
+    100782: trigger tirar frasco o algo asi004
+    100784: trigger tirar frasco o algo asi005
+    100786: trigger tirar frasco o algo asi006
+    100788: trigger tirar frasco o algo asi008
+    100790: trigger tirar frasco o algo asi009
+    100792: trigger tirar frasco o algo asi010
+    100794: Box098
+    400000: Armario o algo
+    400002: Armarito o algo
+    400004: Base
+    400006: Box001
+    400008: Box001 1
+    400010: Box002
+    400012: Box003
+    400014: Box004
+    400016: Box004 1
+    400018: Box005
+    400020: Box005 1
+    400022: Box006
+    400024: Box007
+    400026: Box007 1
+    400028: Box008
+    400030: Box008 1
+    400032: Box009
+    400034: Box010
+    400036: Box011
+    400038: Box012
+    400040: Box013
+    400042: Box014
+    400044: Box015
+    400046: Box016
+    400048: Box017
+    400050: Box017 1
+    400052: Box018
+    400054: Box018 1
+    400056: Box019
+    400058: Box019 1
+    400060: Box020
+    400062: Box020 1
+    400064: Box021
+    400066: Box021 1
+    400068: Box022
+    400070: Box022 1
+    400072: Box023
+    400074: Box023 1
+    400076: Box024
+    400078: Box024 1
+    400080: Box025
+    400082: Box025 1
+    400084: Box026
+    400086: Box026 1
+    400088: Box027
+    400090: Box027 1
+    400092: Box028
+    400094: Box028 1
+    400096: Box029
+    400098: Box029 1
+    400100: Box030
+    400102: Box030 1
+    400104: Box031
+    400106: Box032
+    400108: Box033
+    400110: Box034
+    400112: Box035
+    400114: Box036
+    400116: Box037
+    400118: Box037 1
+    400120: Box038
+    400122: Box038 1
+    400124: Box039
+    400126: Box039 1
+    400128: Box040
+    400130: Box040 1
+    400132: Box041
+    400134: Box041 1
+    400136: Box042
+    400138: Box042 1
+    400140: Box043
+    400142: Box043 1
+    400144: Box044
+    400146: Box045
+    400148: Box046
+    400150: Box047
+    400152: Box050
+    400154: Box051
+    400156: Box052
+    400158: Box053
+    400160: Box054
+    400162: Box055
+    400164: Box056
+    400166: Box057
+    400168: Box058
+    400170: Box059
+    400172: Box060
+    400174: Box061
+    400176: Box062
+    400178: Box063
+    400180: Box064
+    400182: Box065
+    400184: Box066
+    400186: Box067
+    400188: Box068
+    400190: Box069
+    400192: Box071
+    400194: Box072
+    400196: Box073
+    400198: Box074
+    400200: Box075
+    400202: Box076
+    400204: Box078
+    400206: Box079
+    400208: Box080
+    400210: Box081
+    400212: Box082
+    400214: Box083
+    400216: Box084
+    400218: Box085
+    400220: Box086
+    400222: Box087
+    400224: Box088
+    400226: Box089
+    400228: Box090
+    400230: Box091
+    400232: Box092
+    400234: Box093
+    400236: Box094
+    400238: Box095
+    400240: Box096
+    400242: Box097
+    400244: Caja inicio
+    400246: Camuflaje Tematico
+    400248: Camuflaje tematico
+    400250: Camuflaje Tematico001
+    400252: Camuflaje Tematico002
+    400254: Camuflaje Tematico003
+    400256: Camuflaje Tematico004
+    400258: Camuflaje Tematico005
+    400260: Camuflaje tematico005
+    400262: Camuflaje Tematico006
+    400264: Camuflaje tematico006
+    400266: Camuflaje Tematico007
+    400268: Camuflaje Tematico008
+    400270: Camuflaje tematico008
+    400272: Camuflaje Tematico009
+    400274: Camuflaje tematico01
+    400276: Camuflaje Tematico010
+    400278: Camuflaje tematico010
+    400280: Camuflaje tematico011
+    400282: Camuflaje tematico012
+    400284: Camuflaje Tematico013
+    400286: Camuflaje tematico013
+    400288: Camuflaje Tematico014
+    400290: Camuflaje tematico014
+    400292: Camuflaje Tematico015
+    400294: Camuflaje tematico015
+    400296: Camuflaje Tematico016
+    400298: Camuflaje tematico016
+    400300: Camuflaje Tematico017
+    400302: Camuflaje tematico017
+    400304: Camuflaje Tematico018
+    400306: Camuflaje tematico018
+    400308: Camuflaje Tematico019
+    400310: Camuflaje tematico019
+    400312: Camuflaje tematico02
+    400314: Camuflaje Tematico020
+    400316: Camuflaje tematico020
+    400318: Camuflaje Tematico021
+    400320: Camuflaje tematico021
+    400322: Camuflaje Tematico022
+    400324: Camuflaje tematico022
+    400326: Camuflaje Tematico023
+    400328: Camuflaje tematico023
+    400330: Camuflaje tematico024
+    400332: Camuflaje tematico025
+    400334: Camuflaje tematico026
+    400336: Camuflaje tematico027
+    400338: Camuflaje tematico028
+    400340: Camuflaje tematico029
+    400342: Camuflaje tematico03
+    400344: Camuflaje tematico030
+    400346: Camuflaje tematico031
+    400348: Camuflaje tematico032
+    400350: Camuflaje tematico033
+    400352: Camuflaje tematico034
+    400354: Camuflaje tematico035
+    400356: Camuflaje tematico036
+    400358: Camuflaje tematico037
+    400360: Camuflaje tematico038
+    400362: Camuflaje tematico039
+    400364: Camuflaje tematico04
+    400366: Camuflaje tematico040
+    400368: Camuflaje tematico041
+    400370: Camuflaje tematico042
+    400372: Camuflaje tematico043
+    400374: Camuflaje tematico044
+    400376: Camuflaje tematico045
+    400378: Camuflaje tematico046
+    400380: Camuflaje tematico047
+    400382: Camuflaje tematico048
+    400384: Camuflaje tematico049
+    400386: Camuflaje tematico050
+    400388: Camuflaje tematico051
+    400390: Camuflaje tematico052
+    400392: Camuflaje tematico053
+    400394: Camuflaje tematico054
+    400396: Camuflaje tematico055
+    400398: Camuflaje tematico056
+    400400: Camuflaje tematico057
+    400402: Camuflaje tematico058
+    400404: Camuflaje tematico059
+    400406: Camuflaje tematico060
+    400408: Camuflaje tematico061
+    400410: Camuflaje tematico062
+    400412: Camuflaje tematico063
+    400414: Camuflaje tematico064
+    400416: Camuflaje tematico065
+    400418: Camuflaje tematico066
+    400420: Camuflaje tematico067
+    400422: Camuflaje tematico068
+    400424: Camuflaje tematico069
+    400426: Camuflaje tematico080
+    400428: Camuflaje tematico081
+    400430: Camuflaje tematico082
+    400432: Camuflaje tematico083
+    400434: Camuflaje tematico084
+    400436: Camuflaje tematico085
+    400438: Camuflaje tematico086
+    400440: Camuflaje tematico087
+    400442: Camuflaje tematico088
+    400444: Camuflaje tematico089
+    400446: Camuflaje tematico090
+    400448: Camuflaje tematico091
+    400450: Camuflaje tematico092
+    400452: Camuflaje tematico093
+    400454: Camuflaje tematico094
+    400456: Camuflaje tematico095
+    400458: Camuflaje tematico096
+    400460: Camuflaje tematico097
+    400462: Camuflaje tematico098
+    400464: Camuflaje tematico099
+    400466: Camuflaje tematico100
+    400468: Camuflaje tematico101
+    400470: Camuflaje tematico102
+    400472: Camuflaje tematico103
+    400474: Camuflaje tematico104
+    400476: Camuflaje tematico105
+    400478: Camuflaje tematico106
+    400480: Camuflaje tematico107
+    400482: Camuflaje tematico108
+    400484: Camuflaje tematico109
+    400486: Camuflaje tematico110
+    400488: Camuflaje tematico111
+    400490: Camuflaje tematico112
+    400492: Camuflaje tematico113
+    400494: Camuflaje tematico114
+    400496: Camuflaje tematico115
+    400498: Camuflaje tematico116
+    400500: Camuflaje tematico117
+    400502: Camuflaje tematico118
+    400504: Camuflaje tematico119
+    400506: Camuflaje tematico120
+    400508: Camuflaje tematico121
+    400510: Camuflaje tematico122
+    400512: Camuflaje tematico123
+    400514: Camuflaje tematico124
+    400516: Camuflaje tematico125
+    400518: Camuflaje tematico126
+    400520: Camuflaje tematico127
+    400522: Camuflaje tematico128
+    400524: Camuflaje tematico129
+    400526: Camuflaje tematico130
+    400528: Camuflaje tematico131
+    400530: Camuflaje tematico132
+    400532: Camuflaje tematico133
+    400534: Camuflaje tematico134
+    400536: Checkpoint
+    400538: Checkpoint001
+    400540: Checkpoint002
+    400542: Checkpoint003
+    400544: Checkpoint004
+    400546: Checkpoint005
+    400548: Cone001
+    400550: Cone002
+    400552: Cone003
+    400554: Cone004
+    400556: Cone005
+    400558: Cone006
+    400560: Cone007
+    400562: Cone008
+    400564: Cone009
+    400566: Cone010
+    400568: Cone011
+    400570: Cone012
+    400572: Cone013
+    400574: Cone014
+    400576: Cosas copadas futuristas o algo
+    400578: Cosas copadas futuristas o algo01
+    400580: Cosas copadas futuristas o algo02
+    400582: Cuadros o deco
+    400584: Cuadros o deco01
+    400586: Cuadros o deco02
+    400588: Cuarto
+    400590: Cylinder001
+    400592: Cylinder002
+    400594: Cylinder003
+    400596: Cylinder004
+    400598: Cylinder005
+    400600: Cylinder006
+    400602: Cylinder007
+    400604: Cylinder008
+    400606: Cylinder009
+    400608: Cylinder010
+    400610: Cylinder011
+    400612: Cylinder012
+    400614: 'Detalle un esculpido si se copan '
+    400616: Detalles repetidos
+    400618: Detalles repetidos001
+    400620: Detalles repetidos002
+    400622: Detalles repetidos003
+    400624: Detalles repetidos004
+    400626: Exit point
+    400628: Florero o algo
+    400630: //RootNode
+    400632: Libro u otro
+    400634: Libro u otro001
+    400636: Libro u otro002
+    400638: Line001
+    400640: Line002
+    400642: Line003
+    400644: Nu se
+    400646: Obstaculo, mata en contacto intermitente
+    400648: Obstaculo, mata en contacto intermitente001
+    400650: Obstaculo, mata en contacto intermitente002
+    400652: Obstaculo, mata en contacto intermitente003
+    400654: Obstaculo, mata en contacto intermitente004
+    400656: Particle View 001
+    400658: Particle View 001 1
+    400660: Pecera
+    400662: Plane001
+    400664: Plane002
+    400666: Plane002 1
+    400668: Plane003
+    400670: Plane003 1
+    400672: Plane004
+    400674: Plane005
+    400676: Plane006
+    400678: Plane007
+    400680: Plane008
+    400682: Plane009
+    400684: Plane010
+    400686: Plane011
+    400688: Plane012
+    400690: Plane013
+    400692: Plane014
+    400694: Plane015
+    400696: Plane016
+    400698: Plane017
+    400700: Plane018
+    400702: Plane019
+    400704: Plane020
+    400706: Plane021
+    400708: Plane022
+    400710: Plane023
+    400712: plantas etc
+    400714: plantas etc001
+    400716: plantas etc002
+    400718: plantas etc003
+    400720: Power
+    400722: Power start
+    400724: Power001
+    400726: Power002
+    400728: Power004
+    400730: Power005
+    400732: Rectangle001
+    400734: Regla u conector
+    400736: Sphere001
+    400738: StartZone
+    400740: Step
+    400742: Step01
+    400744: Step02
+    400746: Step03
+    400748: Step04
+    400750: Teapot001
+    400752: Teapot002
+    400754: Teapot003
+    400756: Teapot004
+    400758: Teapot005
+    400760: Teapot006
+    400762: Text001
+    400764: Text003
+    400766: Text004
+    400768: Torus001
+    400770: trampa raaton mina
+    400772: trampa raaton mina001
+    400774: trampa raaton mina002
+    400776: trigger tirar frasco o algo asi001
+    400778: trigger tirar frasco o algo asi002
+    400780: trigger tirar frasco o algo asi003
+    400782: trigger tirar frasco o algo asi004
+    400784: trigger tirar frasco o algo asi005
+    400786: trigger tirar frasco o algo asi006
+    400788: trigger tirar frasco o algo asi008
+    400790: trigger tirar frasco o algo asi009
+    400792: trigger tirar frasco o algo asi010
+    400794: Box098
+    2300000: Armario o algo
+    2300002: Armarito o algo
+    2300004: Base
+    2300006: Box001
+    2300008: Box001 1
+    2300010: Box002
+    2300012: Box003
+    2300014: Box004
+    2300016: Box004 1
+    2300018: Box005
+    2300020: Box005 1
+    2300022: Box006
+    2300024: Box007
+    2300026: Box007 1
+    2300028: Box008
+    2300030: Box008 1
+    2300032: Box009
+    2300034: Box010
+    2300036: Box011
+    2300038: Box012
+    2300040: Box013
+    2300042: Box014
+    2300044: Box015
+    2300046: Box016
+    2300048: Box017
+    2300050: Box017 1
+    2300052: Box018
+    2300054: Box018 1
+    2300056: Box019
+    2300058: Box019 1
+    2300060: Box020
+    2300062: Box020 1
+    2300064: Box021
+    2300066: Box021 1
+    2300068: Box022
+    2300070: Box022 1
+    2300072: Box023
+    2300074: Box023 1
+    2300076: Box024
+    2300078: Box024 1
+    2300080: Box025
+    2300082: Box025 1
+    2300084: Box026
+    2300086: Box026 1
+    2300088: Box027
+    2300090: Box027 1
+    2300092: Box028
+    2300094: Box028 1
+    2300096: Box029
+    2300098: Box029 1
+    2300100: Box030
+    2300102: Box030 1
+    2300104: Box031
+    2300106: Box032
+    2300108: Box033
+    2300110: Box034
+    2300112: Box035
+    2300114: Box036
+    2300116: Box037
+    2300118: Box037 1
+    2300120: Box038
+    2300122: Box038 1
+    2300124: Box039
+    2300126: Box039 1
+    2300128: Box040
+    2300130: Box040 1
+    2300132: Box041
+    2300134: Box041 1
+    2300136: Box042
+    2300138: Box042 1
+    2300140: Box043
+    2300142: Box043 1
+    2300144: Box044
+    2300146: Box045
+    2300148: Box046
+    2300150: Box047
+    2300152: Box050
+    2300154: Box051
+    2300156: Box052
+    2300158: Box053
+    2300160: Box054
+    2300162: Box055
+    2300164: Box056
+    2300166: Box057
+    2300168: Box058
+    2300170: Box059
+    2300172: Box060
+    2300174: Box061
+    2300176: Box062
+    2300178: Box063
+    2300180: Box064
+    2300182: Box065
+    2300184: Box066
+    2300186: Box067
+    2300188: Box068
+    2300190: Box069
+    2300192: Box071
+    2300194: Box072
+    2300196: Box073
+    2300198: Box074
+    2300200: Box075
+    2300202: Box076
+    2300204: Box078
+    2300206: Box079
+    2300208: Box080
+    2300210: Box081
+    2300212: Box082
+    2300214: Box083
+    2300216: Box084
+    2300218: Box085
+    2300220: Box086
+    2300222: Box087
+    2300224: Box088
+    2300226: Box089
+    2300228: Box090
+    2300230: Box091
+    2300232: Box092
+    2300234: Box093
+    2300236: Box094
+    2300238: Box095
+    2300240: Box096
+    2300242: Box097
+    2300244: Caja inicio
+    2300246: Camuflaje tematico
+    2300248: Camuflaje tematico005
+    2300250: Camuflaje tematico006
+    2300252: Camuflaje tematico008
+    2300254: Camuflaje tematico01
+    2300256: Camuflaje tematico010
+    2300258: Camuflaje tematico011
+    2300260: Camuflaje tematico012
+    2300262: Camuflaje tematico013
+    2300264: Camuflaje tematico014
+    2300266: Camuflaje tematico015
+    2300268: Camuflaje tematico016
+    2300270: Camuflaje tematico017
+    2300272: Camuflaje tematico018
+    2300274: Camuflaje tematico019
+    2300276: Camuflaje tematico02
+    2300278: Camuflaje tematico020
+    2300280: Camuflaje tematico021
+    2300282: Camuflaje tematico022
+    2300284: Camuflaje tematico023
+    2300286: Camuflaje tematico024
+    2300288: Camuflaje tematico025
+    2300290: Camuflaje tematico026
+    2300292: Camuflaje tematico027
+    2300294: Camuflaje tematico028
+    2300296: Camuflaje tematico029
+    2300298: Camuflaje tematico03
+    2300300: Camuflaje tematico030
+    2300302: Camuflaje tematico031
+    2300304: Camuflaje tematico032
+    2300306: Camuflaje tematico033
+    2300308: Camuflaje tematico034
+    2300310: Camuflaje tematico035
+    2300312: Camuflaje tematico036
+    2300314: Camuflaje tematico037
+    2300316: Camuflaje tematico038
+    2300318: Camuflaje tematico039
+    2300320: Camuflaje tematico04
+    2300322: Camuflaje tematico040
+    2300324: Camuflaje tematico041
+    2300326: Camuflaje tematico042
+    2300328: Camuflaje tematico043
+    2300330: Camuflaje tematico044
+    2300332: Camuflaje tematico045
+    2300334: Camuflaje tematico046
+    2300336: Camuflaje tematico047
+    2300338: Camuflaje tematico048
+    2300340: Camuflaje tematico049
+    2300342: Camuflaje tematico050
+    2300344: Camuflaje tematico051
+    2300346: Camuflaje tematico052
+    2300348: Camuflaje tematico053
+    2300350: Camuflaje tematico054
+    2300352: Camuflaje tematico055
+    2300354: Camuflaje tematico056
+    2300356: Camuflaje tematico057
+    2300358: Camuflaje tematico058
+    2300360: Camuflaje tematico059
+    2300362: Camuflaje tematico060
+    2300364: Camuflaje tematico061
+    2300366: Camuflaje tematico062
+    2300368: Camuflaje tematico063
+    2300370: Camuflaje tematico064
+    2300372: Camuflaje tematico065
+    2300374: Camuflaje tematico066
+    2300376: Camuflaje tematico067
+    2300378: Camuflaje tematico068
+    2300380: Camuflaje tematico069
+    2300382: Camuflaje tematico080
+    2300384: Camuflaje tematico081
+    2300386: Camuflaje tematico082
+    2300388: Camuflaje tematico083
+    2300390: Camuflaje tematico084
+    2300392: Camuflaje tematico085
+    2300394: Camuflaje tematico086
+    2300396: Camuflaje tematico087
+    2300398: Camuflaje tematico088
+    2300400: Camuflaje tematico089
+    2300402: Camuflaje tematico090
+    2300404: Camuflaje tematico091
+    2300406: Camuflaje tematico092
+    2300408: Camuflaje tematico093
+    2300410: Camuflaje tematico094
+    2300412: Camuflaje tematico095
+    2300414: Camuflaje tematico096
+    2300416: Camuflaje tematico097
+    2300418: Camuflaje tematico098
+    2300420: Camuflaje tematico099
+    2300422: Camuflaje tematico100
+    2300424: Camuflaje tematico101
+    2300426: Camuflaje tematico102
+    2300428: Camuflaje tematico103
+    2300430: Camuflaje tematico104
+    2300432: Camuflaje tematico105
+    2300434: Camuflaje tematico106
+    2300436: Camuflaje tematico107
+    2300438: Camuflaje tematico108
+    2300440: Camuflaje tematico109
+    2300442: Camuflaje tematico110
+    2300444: Camuflaje tematico111
+    2300446: Camuflaje tematico112
+    2300448: Camuflaje tematico113
+    2300450: Camuflaje tematico114
+    2300452: Camuflaje tematico115
+    2300454: Camuflaje tematico116
+    2300456: Camuflaje tematico117
+    2300458: Camuflaje tematico118
+    2300460: Camuflaje tematico119
+    2300462: Camuflaje tematico120
+    2300464: Camuflaje tematico121
+    2300466: Camuflaje tematico122
+    2300468: Camuflaje tematico123
+    2300470: Camuflaje tematico124
+    2300472: Camuflaje tematico125
+    2300474: Camuflaje tematico126
+    2300476: Camuflaje tematico127
+    2300478: Camuflaje tematico128
+    2300480: Camuflaje tematico129
+    2300482: Camuflaje tematico130
+    2300484: Camuflaje tematico131
+    2300486: Camuflaje tematico132
+    2300488: Camuflaje tematico133
+    2300490: Camuflaje tematico134
+    2300492: Checkpoint
+    2300494: Checkpoint001
+    2300496: Checkpoint002
+    2300498: Checkpoint003
+    2300500: Checkpoint004
+    2300502: Checkpoint005
+    2300504: Cone001
+    2300506: Cone002
+    2300508: Cone003
+    2300510: Cone004
+    2300512: Cone005
+    2300514: Cone006
+    2300516: Cone007
+    2300518: Cone008
+    2300520: Cone009
+    2300522: Cone010
+    2300524: Cone011
+    2300526: Cone012
+    2300528: Cone013
+    2300530: Cone014
+    2300532: Cosas copadas futuristas o algo
+    2300534: Cosas copadas futuristas o algo01
+    2300536: Cosas copadas futuristas o algo02
+    2300538: Cuadros o deco
+    2300540: Cuadros o deco01
+    2300542: Cuadros o deco02
+    2300544: Cuarto
+    2300546: Cylinder001
+    2300548: Cylinder002
+    2300550: Cylinder003
+    2300552: Cylinder004
+    2300554: Cylinder005
+    2300556: Cylinder006
+    2300558: Cylinder007
+    2300560: Cylinder008
+    2300562: Cylinder009
+    2300564: Cylinder010
+    2300566: Cylinder011
+    2300568: Cylinder012
+    2300570: 'Detalle un esculpido si se copan '
+    2300572: Detalles repetidos
+    2300574: Detalles repetidos001
+    2300576: Detalles repetidos002
+    2300578: Detalles repetidos003
+    2300580: Detalles repetidos004
+    2300582: Exit point
+    2300584: Florero o algo
+    2300586: Libro u otro
+    2300588: Libro u otro001
+    2300590: Libro u otro002
+    2300592: Nu se
+    2300594: Obstaculo, mata en contacto intermitente
+    2300596: Obstaculo, mata en contacto intermitente001
+    2300598: Obstaculo, mata en contacto intermitente002
+    2300600: Obstaculo, mata en contacto intermitente003
+    2300602: Obstaculo, mata en contacto intermitente004
+    2300604: Pecera
+    2300606: Plane001
+    2300608: Plane002
+    2300610: Plane002 1
+    2300612: Plane003
+    2300614: Plane003 1
+    2300616: Plane004
+    2300618: Plane005
+    2300620: Plane006
+    2300622: Plane007
+    2300624: Plane008
+    2300626: Plane009
+    2300628: Plane010
+    2300630: Plane011
+    2300632: Plane012
+    2300634: Plane013
+    2300636: Plane014
+    2300638: Plane015
+    2300640: Plane016
+    2300642: Plane017
+    2300644: Plane018
+    2300646: Plane019
+    2300648: Plane020
+    2300650: Plane021
+    2300652: Plane022
+    2300654: Plane023
+    2300656: Power
+    2300658: Power start
+    2300660: Power001
+    2300662: Power002
+    2300664: Power004
+    2300666: Power005
+    2300668: Regla u conector
+    2300670: Sphere001
+    2300672: StartZone
+    2300674: Step
+    2300676: Step01
+    2300678: Step02
+    2300680: Step03
+    2300682: Step04
+    2300684: Teapot001
+    2300686: Teapot002
+    2300688: Teapot003
+    2300690: Teapot004
+    2300692: Teapot005
+    2300694: Teapot006
+    2300696: Torus001
+    2300698: trampa raaton mina
+    2300700: trampa raaton mina001
+    2300702: trampa raaton mina002
+    2300704: trigger tirar frasco o algo asi001
+    2300706: trigger tirar frasco o algo asi002
+    2300708: trigger tirar frasco o algo asi003
+    2300710: trigger tirar frasco o algo asi004
+    2300712: trigger tirar frasco o algo asi005
+    2300714: trigger tirar frasco o algo asi006
+    2300716: trigger tirar frasco o algo asi008
+    2300718: trigger tirar frasco o algo asi009
+    2300720: trigger tirar frasco o algo asi010
+    2300722: Box098
+    3300000: Armario o algo
+    3300002: Armarito o algo
+    3300004: Base
+    3300006: Box001
+    3300008: Box001 1
+    3300010: Box002
+    3300012: Box003
+    3300014: Box004
+    3300016: Box004 1
+    3300018: Box005
+    3300020: Box005 1
+    3300022: Box006
+    3300024: Box007
+    3300026: Box007 1
+    3300028: Box008
+    3300030: Box008 1
+    3300032: Box009
+    3300034: Box010
+    3300036: Box011
+    3300038: Box012
+    3300040: Box013
+    3300042: Box014
+    3300044: Box015
+    3300046: Box016
+    3300048: Box017
+    3300050: Box017 1
+    3300052: Box018
+    3300054: Box018 1
+    3300056: Box019
+    3300058: Box019 1
+    3300060: Box020
+    3300062: Box020 1
+    3300064: Box021
+    3300066: Box021 1
+    3300068: Box022
+    3300070: Box022 1
+    3300072: Box023
+    3300074: Box023 1
+    3300076: Box024
+    3300078: Box024 1
+    3300080: Box025
+    3300082: Box025 1
+    3300084: Box026
+    3300086: Box026 1
+    3300088: Box027
+    3300090: Box027 1
+    3300092: Box028
+    3300094: Box028 1
+    3300096: Box029
+    3300098: Box029 1
+    3300100: Box030
+    3300102: Box030 1
+    3300104: Box031
+    3300106: Box032
+    3300108: Box033
+    3300110: Box034
+    3300112: Box035
+    3300114: Box036
+    3300116: Box037
+    3300118: Box037 1
+    3300120: Box038
+    3300122: Box038 1
+    3300124: Box039
+    3300126: Box039 1
+    3300128: Box040
+    3300130: Box040 1
+    3300132: Box041
+    3300134: Box041 1
+    3300136: Box042
+    3300138: Box042 1
+    3300140: Box043
+    3300142: Box043 1
+    3300144: Box044
+    3300146: Box045
+    3300148: Box046
+    3300150: Box047
+    3300152: Box050
+    3300154: Box051
+    3300156: Box052
+    3300158: Box053
+    3300160: Box054
+    3300162: Box055
+    3300164: Box056
+    3300166: Box057
+    3300168: Box058
+    3300170: Box059
+    3300172: Box060
+    3300174: Box061
+    3300176: Box062
+    3300178: Box063
+    3300180: Box064
+    3300182: Box065
+    3300184: Box066
+    3300186: Box067
+    3300188: Box068
+    3300190: Box069
+    3300192: Box071
+    3300194: Box072
+    3300196: Box073
+    3300198: Box074
+    3300200: Box075
+    3300202: Box076
+    3300204: Box078
+    3300206: Box079
+    3300208: Box080
+    3300210: Box081
+    3300212: Box082
+    3300214: Box083
+    3300216: Box084
+    3300218: Box085
+    3300220: Box086
+    3300222: Box087
+    3300224: Box088
+    3300226: Box089
+    3300228: Box090
+    3300230: Box091
+    3300232: Box092
+    3300234: Box093
+    3300236: Box094
+    3300238: Box095
+    3300240: Box096
+    3300242: Box097
+    3300244: Caja inicio
+    3300246: Camuflaje tematico
+    3300248: Camuflaje tematico005
+    3300250: Camuflaje tematico006
+    3300252: Camuflaje tematico008
+    3300254: Camuflaje tematico01
+    3300256: Camuflaje tematico010
+    3300258: Camuflaje tematico011
+    3300260: Camuflaje tematico012
+    3300262: Camuflaje tematico013
+    3300264: Camuflaje tematico014
+    3300266: Camuflaje tematico015
+    3300268: Camuflaje tematico016
+    3300270: Camuflaje tematico017
+    3300272: Camuflaje tematico018
+    3300274: Camuflaje tematico019
+    3300276: Camuflaje tematico02
+    3300278: Camuflaje tematico020
+    3300280: Camuflaje tematico021
+    3300282: Camuflaje tematico022
+    3300284: Camuflaje tematico023
+    3300286: Camuflaje tematico024
+    3300288: Camuflaje tematico025
+    3300290: Camuflaje tematico026
+    3300292: Camuflaje tematico027
+    3300294: Camuflaje tematico028
+    3300296: Camuflaje tematico029
+    3300298: Camuflaje tematico03
+    3300300: Camuflaje tematico030
+    3300302: Camuflaje tematico031
+    3300304: Camuflaje tematico032
+    3300306: Camuflaje tematico033
+    3300308: Camuflaje tematico034
+    3300310: Camuflaje tematico035
+    3300312: Camuflaje tematico036
+    3300314: Camuflaje tematico037
+    3300316: Camuflaje tematico038
+    3300318: Camuflaje tematico039
+    3300320: Camuflaje tematico04
+    3300322: Camuflaje tematico040
+    3300324: Camuflaje tematico041
+    3300326: Camuflaje tematico042
+    3300328: Camuflaje tematico043
+    3300330: Camuflaje tematico044
+    3300332: Camuflaje tematico045
+    3300334: Camuflaje tematico046
+    3300336: Camuflaje tematico047
+    3300338: Camuflaje tematico048
+    3300340: Camuflaje tematico049
+    3300342: Camuflaje tematico050
+    3300344: Camuflaje tematico051
+    3300346: Camuflaje tematico052
+    3300348: Camuflaje tematico053
+    3300350: Camuflaje tematico054
+    3300352: Camuflaje tematico055
+    3300354: Camuflaje tematico056
+    3300356: Camuflaje tematico057
+    3300358: Camuflaje tematico058
+    3300360: Camuflaje tematico059
+    3300362: Camuflaje tematico060
+    3300364: Camuflaje tematico061
+    3300366: Camuflaje tematico062
+    3300368: Camuflaje tematico063
+    3300370: Camuflaje tematico064
+    3300372: Camuflaje tematico065
+    3300374: Camuflaje tematico066
+    3300376: Camuflaje tematico067
+    3300378: Camuflaje tematico068
+    3300380: Camuflaje tematico069
+    3300382: Camuflaje tematico080
+    3300384: Camuflaje tematico081
+    3300386: Camuflaje tematico082
+    3300388: Camuflaje tematico083
+    3300390: Camuflaje tematico084
+    3300392: Camuflaje tematico085
+    3300394: Camuflaje tematico086
+    3300396: Camuflaje tematico087
+    3300398: Camuflaje tematico088
+    3300400: Camuflaje tematico089
+    3300402: Camuflaje tematico090
+    3300404: Camuflaje tematico091
+    3300406: Camuflaje tematico092
+    3300408: Camuflaje tematico093
+    3300410: Camuflaje tematico094
+    3300412: Camuflaje tematico095
+    3300414: Camuflaje tematico096
+    3300416: Camuflaje tematico097
+    3300418: Camuflaje tematico098
+    3300420: Camuflaje tematico099
+    3300422: Camuflaje tematico100
+    3300424: Camuflaje tematico101
+    3300426: Camuflaje tematico102
+    3300428: Camuflaje tematico103
+    3300430: Camuflaje tematico104
+    3300432: Camuflaje tematico105
+    3300434: Camuflaje tematico106
+    3300436: Camuflaje tematico107
+    3300438: Camuflaje tematico108
+    3300440: Camuflaje tematico109
+    3300442: Camuflaje tematico110
+    3300444: Camuflaje tematico111
+    3300446: Camuflaje tematico112
+    3300448: Camuflaje tematico113
+    3300450: Camuflaje tematico114
+    3300452: Camuflaje tematico115
+    3300454: Camuflaje tematico116
+    3300456: Camuflaje tematico117
+    3300458: Camuflaje tematico118
+    3300460: Camuflaje tematico119
+    3300462: Camuflaje tematico120
+    3300464: Camuflaje tematico121
+    3300466: Camuflaje tematico122
+    3300468: Camuflaje tematico123
+    3300470: Camuflaje tematico124
+    3300472: Camuflaje tematico125
+    3300474: Camuflaje tematico126
+    3300476: Camuflaje tematico127
+    3300478: Camuflaje tematico128
+    3300480: Camuflaje tematico129
+    3300482: Camuflaje tematico130
+    3300484: Camuflaje tematico131
+    3300486: Camuflaje tematico132
+    3300488: Camuflaje tematico133
+    3300490: Camuflaje tematico134
+    3300492: Checkpoint
+    3300494: Checkpoint001
+    3300496: Checkpoint002
+    3300498: Checkpoint003
+    3300500: Checkpoint004
+    3300502: Checkpoint005
+    3300504: Cone001
+    3300506: Cone002
+    3300508: Cone003
+    3300510: Cone004
+    3300512: Cone005
+    3300514: Cone006
+    3300516: Cone007
+    3300518: Cone008
+    3300520: Cone009
+    3300522: Cone010
+    3300524: Cone011
+    3300526: Cone012
+    3300528: Cone013
+    3300530: Cone014
+    3300532: Cosas copadas futuristas o algo
+    3300534: Cosas copadas futuristas o algo01
+    3300536: Cosas copadas futuristas o algo02
+    3300538: Cuadros o deco
+    3300540: Cuadros o deco01
+    3300542: Cuadros o deco02
+    3300544: Cuarto
+    3300546: Cylinder001
+    3300548: Cylinder002
+    3300550: Cylinder003
+    3300552: Cylinder004
+    3300554: Cylinder005
+    3300556: Cylinder006
+    3300558: Cylinder007
+    3300560: Cylinder008
+    3300562: Cylinder009
+    3300564: Cylinder010
+    3300566: Cylinder011
+    3300568: Cylinder012
+    3300570: 'Detalle un esculpido si se copan '
+    3300572: Detalles repetidos
+    3300574: Detalles repetidos001
+    3300576: Detalles repetidos002
+    3300578: Detalles repetidos003
+    3300580: Detalles repetidos004
+    3300582: Exit point
+    3300584: Florero o algo
+    3300586: Libro u otro
+    3300588: Libro u otro001
+    3300590: Libro u otro002
+    3300592: Nu se
+    3300594: Obstaculo, mata en contacto intermitente
+    3300596: Obstaculo, mata en contacto intermitente001
+    3300598: Obstaculo, mata en contacto intermitente002
+    3300600: Obstaculo, mata en contacto intermitente003
+    3300602: Obstaculo, mata en contacto intermitente004
+    3300604: Pecera
+    3300606: Plane001
+    3300608: Plane002
+    3300610: Plane002 1
+    3300612: Plane003
+    3300614: Plane003 1
+    3300616: Plane004
+    3300618: Plane005
+    3300620: Plane006
+    3300622: Plane007
+    3300624: Plane008
+    3300626: Plane009
+    3300628: Plane010
+    3300630: Plane011
+    3300632: Plane012
+    3300634: Plane013
+    3300636: Plane014
+    3300638: Plane015
+    3300640: Plane016
+    3300642: Plane017
+    3300644: Plane018
+    3300646: Plane019
+    3300648: Plane020
+    3300650: Plane021
+    3300652: Plane022
+    3300654: Plane023
+    3300656: Power
+    3300658: Power start
+    3300660: Power001
+    3300662: Power002
+    3300664: Power004
+    3300666: Power005
+    3300668: Regla u conector
+    3300670: Sphere001
+    3300672: StartZone
+    3300674: Step
+    3300676: Step01
+    3300678: Step02
+    3300680: Step03
+    3300682: Step04
+    3300684: Teapot001
+    3300686: Teapot002
+    3300688: Teapot003
+    3300690: Teapot004
+    3300692: Teapot005
+    3300694: Teapot006
+    3300696: Torus001
+    3300698: trampa raaton mina
+    3300700: trampa raaton mina001
+    3300702: trampa raaton mina002
+    3300704: trigger tirar frasco o algo asi001
+    3300706: trigger tirar frasco o algo asi002
+    3300708: trigger tirar frasco o algo asi003
+    3300710: trigger tirar frasco o algo asi004
+    3300712: trigger tirar frasco o algo asi005
+    3300714: trigger tirar frasco o algo asi006
+    3300716: trigger tirar frasco o algo asi008
+    3300718: trigger tirar frasco o algo asi009
+    3300720: trigger tirar frasco o algo asi010
+    3300722: Box098
+    4300000: Box001
+    4300002: Plane001
+    4300004: Plane002
+    4300006: Plane003
+    4300008: Box002
+    4300010: Box003
+    4300012: Box004
+    4300014: Box005
+    4300016: Box006
+    4300018: Box007
+    4300020: Box008
+    4300022: Box009
+    4300024: Box010
+    4300026: Box011
+    4300028: Box012
+    4300030: Box013
+    4300032: Box014
+    4300034: Box015
+    4300036: Box016
+    4300038: Box017
+    4300040: Cylinder001
+    4300042: Cylinder002
+    4300044: Box018
+    4300046: Box019
+    4300048: Box020
+    4300050: Box021
+    4300052: Box022
+    4300054: Box023
+    4300056: Box024
+    4300058: Box025
+    4300060: Cone001
+    4300062: Cone002
+    4300064: Cone003
+    4300066: Cone004
+    4300068: Cone005
+    4300070: Cone006
+    4300072: Cone007
+    4300074: Cone008
+    4300076: Cone009
+    4300078: Cone010
+    4300080: Cone011
+    4300082: Cone012
+    4300084: Box026
+    4300086: Box027
+    4300088: Box028
+    4300090: Box029
+    4300092: Box030
+    4300094: Box031
+    4300096: Box032
+    4300098: Box033
+    4300100: Teapot001
+    4300102: Teapot002
+    4300104: Teapot003
+    4300106: Cylinder003
+    4300108: Box034
+    4300110: Box035
+    4300112: Box036
+    4300114: Box037
+    4300116: Box038
+    4300118: Box039
+    4300120: Box040
+    4300122: Box041
+    4300124: Box042
+    4300126: Box043
+    4300128: Box044
+    4300130: Box045
+    4300132: Box046
+    4300134: Cylinder004
+    4300136: Sphere001
+    4300138: Torus001
+    4300140: Box047
+    4300142: Box050
+    4300144: Box051
+    4300146: Box052
+    4300148: Box053
+    4300150: Box054
+    4300152: Box055
+    4300154: Box056
+    4300156: Box057
+    4300158: Box058
+    4300160: Box059
+    4300162: Box060
+    4300164: Box061
+    4300166: Box062
+    4300168: Box063
+    4300170: Box064
+    4300172: Box065
+    4300174: Box066
+    4300176: Box067
+    4300178: Cone013
+    4300180: Box068
+    4300182: Box069
+    4300184: Box071
+    4300186: Cylinder005
+    4300188: Cylinder006
+    4300190: Box072
+    4300192: Box073
+    4300194: Box074
+    4300196: Box075
+    4300198: Box076
+    4300200: Cylinder007
+    4300202: Cylinder008
+    4300204: Cylinder009
+    4300206: Cylinder010
+    4300208: Cylinder011
+    4300210: Teapot004
+    4300212: Teapot005
+    4300214: Teapot006
+    4300216: Box078
+    4300218: Box079
+    4300220: Box080
+    4300222: Cylinder012
+    4300224: Box081
+    4300226: Cuarto
+    4300228: Caja inicio
+    4300230: Exit point
+    4300232: Base
+    4300234: Pecera
+    4300236: StartZone
+    4300238: Camuflaje tematico01
+    4300240: Camuflaje tematico02
+    4300242: Camuflaje tematico03
+    4300244: Camuflaje tematico
+    4300246: Camuflaje tematico04
+    4300248: Box001
+    4300250: Camuflaje tematico005
+    4300252: Camuflaje tematico006
+    4300254: Camuflaje tematico008
+    4300256: Camuflaje tematico015
+    4300258: Camuflaje tematico016
+    4300260: Camuflaje tematico017
+    4300262: Camuflaje tematico018
+    4300264: Camuflaje tematico019
+    4300266: Camuflaje tematico020
+    4300268: Camuflaje tematico051
+    4300270: Camuflaje tematico052
+    4300272: Camuflaje tematico053
+    4300274: Camuflaje tematico054
+    4300276: Camuflaje tematico055
+    4300278: Camuflaje tematico056
+    4300280: Camuflaje tematico057
+    4300282: Camuflaje tematico058
+    4300284: Camuflaje tematico059
+    4300286: Power start
+    4300288: Power
+    4300290: Box004
+    4300292: Box005
+    4300294: Box007
+    4300296: Box008
+    4300298: Regla u conector
+    4300300: Camuflaje tematico010
+    4300302: Camuflaje tematico011
+    4300304: Camuflaje tematico012
+    4300306: Camuflaje tematico013
+    4300308: Camuflaje tematico014
+    4300310: Step
+    4300312: Step04
+    4300314: Step03
+    4300316: Step02
+    4300318: Step01
+    4300320: Cuadros o deco
+    4300322: Cuadros o deco01
+    4300324: Cuadros o deco02
+    4300326: Box017
+    4300328: Plane005
+    4300330: Plane003
+    4300332: Plane004
+    4300334: Plane002
+    4300336: Plane006
+    4300338: Plane007
+    4300340: Plane008
+    4300342: Plane009
+    4300344: Plane010
+    4300346: Plane011
+    4300348: Plane012
+    4300350: Plane013
+    4300352: Plane014
+    4300354: Plane015
+    4300356: Plane016
+    4300358: Plane017
+    4300360: Libro u otro
+    4300362: Obstaculo, mata en contacto intermitente
+    4300364: Obstaculo, mata en contacto intermitente001
+    4300366: Obstaculo, mata en contacto intermitente002
+    4300368: Obstaculo, mata en contacto intermitente003
+    4300370: Armario o algo
+    4300372: Plane021
+    4300374: Plane020
+    4300376: Plane019
+    4300378: Plane018
+    4300380: Armarito o algo
+    4300382: Florero o algo
+    4300384: Power001
+    4300386: Libro u otro001
+    4300388: Libro u otro002
+    4300390: Box018
+    4300392: Box019
+    4300394: Box020
+    4300396: Box021
+    4300398: Power002
+    4300400: Camuflaje tematico021
+    4300402: Camuflaje tematico022
+    4300404: Camuflaje tematico023
+    4300406: Camuflaje tematico024
+    4300408: Camuflaje tematico025
+    4300410: Camuflaje tematico026
+    4300412: Camuflaje tematico027
+    4300414: Camuflaje tematico028
+    4300416: Camuflaje tematico029
+    4300418: Camuflaje tematico030
+    4300420: Camuflaje tematico031
+    4300422: Camuflaje tematico032
+    4300424: Camuflaje tematico033
+    4300426: Camuflaje tematico034
+    4300428: Camuflaje tematico035
+    4300430: Camuflaje tematico036
+    4300432: Camuflaje tematico037
+    4300434: Camuflaje tematico038
+    4300436: Camuflaje tematico039
+    4300438: Camuflaje tematico040
+    4300440: Camuflaje tematico041
+    4300442: Camuflaje tematico042
+    4300444: Camuflaje tematico043
+    4300446: Camuflaje tematico044
+    4300448: Camuflaje tematico045
+    4300450: Camuflaje tematico046
+    4300452: Camuflaje tematico047
+    4300454: Camuflaje tematico048
+    4300456: Camuflaje tematico049
+    4300458: Camuflaje tematico050
+    4300460: Box022
+    4300462: Box023
+    4300464: Box024
+    4300466: Box025
+    4300468: Box026
+    4300470: Box027
+    4300472: Box028
+    4300474: Box029
+    4300476: Box030
+    4300478: Box037
+    4300480: Box038
+    4300482: Box039
+    4300484: Box040
+    4300486: Box041
+    4300488: Box042
+    4300490: Box043
+    4300492: 'Detalle un esculpido si se copan '
+    4300494: trampa raaton mina
+    4300496: trampa raaton mina001
+    4300498: trampa raaton mina002
+    4300500: Cosas copadas futuristas o algo
+    4300502: Cosas copadas futuristas o algo01
+    4300504: Cosas copadas futuristas o algo02
+    4300506: Obstaculo, mata en contacto intermitente004
+    4300508: Checkpoint
+    4300510: Checkpoint001
+    4300512: Detalles repetidos
+    4300514: Detalles repetidos001
+    4300516: Detalles repetidos002
+    4300518: Detalles repetidos003
+    4300520: Detalles repetidos004
+    4300522: Checkpoint002
+    4300524: trigger tirar frasco o algo asi001
+    4300526: trigger tirar frasco o algo asi002
+    4300528: trigger tirar frasco o algo asi003
+    4300530: trigger tirar frasco o algo asi004
+    4300532: trigger tirar frasco o algo asi005
+    4300534: trigger tirar frasco o algo asi006
+    4300536: trigger tirar frasco o algo asi008
+    4300538: trigger tirar frasco o algo asi009
+    4300540: trigger tirar frasco o algo asi010
+    4300542: Nu se
+    4300544: Camuflaje tematico060
+    4300546: Camuflaje tematico061
+    4300548: Camuflaje tematico062
+    4300550: Camuflaje tematico063
+    4300552: Camuflaje tematico064
+    4300554: Box082
+    4300556: Cone014
+    4300558: Box083
+    4300560: Plane022
+    4300562: Box084
+    4300564: Box085
+    4300566: Box086
+    4300568: Box087
+    4300570: Box088
+    4300572: Box089
+    4300574: Power004
+    4300576: Power005
+    4300578: Box090
+    4300580: Checkpoint003
+    4300582: Box091
+    4300584: Box092
+    4300586: Box093
+    4300588: Box094
+    4300590: Camuflaje tematico065
+    4300592: Camuflaje tematico066
+    4300594: Camuflaje tematico067
+    4300596: Camuflaje tematico068
+    4300598: Camuflaje tematico069
+    4300600: Camuflaje tematico080
+    4300602: Camuflaje tematico081
+    4300604: Camuflaje tematico082
+    4300606: Camuflaje tematico083
+    4300608: Camuflaje tematico084
+    4300610: Camuflaje tematico085
+    4300612: Camuflaje tematico086
+    4300614: Camuflaje tematico087
+    4300616: Camuflaje tematico088
+    4300618: Camuflaje tematico089
+    4300620: Box095
+    4300622: Camuflaje tematico090
+    4300624: Camuflaje tematico091
+    4300626: Camuflaje tematico092
+    4300628: Camuflaje tematico093
+    4300630: Camuflaje tematico094
+    4300632: Plane023
+    4300634: Checkpoint004
+    4300636: Checkpoint005
+    4300638: Camuflaje tematico095
+    4300640: Camuflaje tematico096
+    4300642: Camuflaje tematico097
+    4300644: Camuflaje tematico098
+    4300646: Camuflaje tematico099
+    4300648: Camuflaje tematico100
+    4300650: Camuflaje tematico101
+    4300652: Camuflaje tematico102
+    4300654: Camuflaje tematico103
+    4300656: Camuflaje tematico104
+    4300658: Camuflaje tematico105
+    4300660: Camuflaje tematico106
+    4300662: Camuflaje tematico107
+    4300664: Camuflaje tematico108
+    4300666: Camuflaje tematico109
+    4300668: Camuflaje tematico110
+    4300670: Camuflaje tematico111
+    4300672: Camuflaje tematico112
+    4300674: Camuflaje tematico113
+    4300676: Camuflaje tematico114
+    4300678: Box096
+    4300680: Box097
+    4300682: Camuflaje tematico115
+    4300684: Camuflaje tematico116
+    4300686: Camuflaje tematico117
+    4300688: Camuflaje tematico118
+    4300690: Camuflaje tematico119
+    4300692: Camuflaje tematico120
+    4300694: Camuflaje tematico121
+    4300696: Camuflaje tematico122
+    4300698: Camuflaje tematico123
+    4300700: Camuflaje tematico124
+    4300702: Camuflaje tematico125
+    4300704: Camuflaje tematico126
+    4300706: Camuflaje tematico127
+    4300708: Camuflaje tematico128
+    4300710: Camuflaje tematico129
+    4300712: Camuflaje tematico130
+    4300714: Camuflaje tematico131
+    4300716: Camuflaje tematico132
+    4300718: Camuflaje tematico133
+    4300720: Camuflaje tematico134
+    4300722: Box098
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
