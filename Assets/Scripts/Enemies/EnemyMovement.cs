@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour {
 	
 	void Start () {
 		currentFlagIndex = 0;
-		minDistanceToChangeFlags = 1f;
 		this.lookAtCurrentFlag ();
 	}
 	
