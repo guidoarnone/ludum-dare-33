@@ -13,15 +13,26 @@ public class MovementHandler : MonoBehaviour
 	public float maxFallSpeed;
 	public float deadZone;
 
+	//DEBUG BLOCK
+	public float _Y;
+	public bool _isMoving;
+	public bool _isGrounded;
+	public bool _isJumping;
+	public bool _landed;
+	public string _animState;
+	//TESTING END
+
 	private bool canJump;
 
 	private bool isMoving;
 	private bool isGrounded;
 	private bool isJumping;
-	private bool isFalling;
+	private bool landed;
 
 	private float lastY;
 	private Vector3 movement;
+	private AnimationState.State animState;
+
 	private static MovementHandler self;
 
 	private float speedModifier;
@@ -42,10 +53,82 @@ public class MovementHandler : MonoBehaviour
 
 	void Update ()
 	{
+		//DEBUG BLOCK
+		_Y = movement.y;
+		_isMoving = isMoving;
+		_isJumping = isJumping;
+		_isGrounded = isGrounded;
+		_landed = landed;
+		_animState = animState.ToString();
+		//TESTING END
+
 		setFlags ();
 		checkInput();
+		currentAnimationState ();
 		applyGravity ();
 		move ();
+	}
+
+	private void setFlags()
+	{
+		if (movement.x + movement.z < deadZone && movement.x + movement.z > -deadZone)
+		{
+			isMoving = false;
+		}
+		
+		else
+		{
+			isMoving = true;
+		}
+		
+		if (movement.y < 0.1f)
+		{
+			canJump = true;
+			isJumping = false;
+		}
+		else
+		{
+			isJumping = true;
+		}
+		
+		int layermask;
+		
+		int layer = 8;
+		layermask = 1 << layer;
+		
+		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f + characterController.radius * transform.forward + characterController.radius * transform.right;
+		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f - characterController.radius * transform.forward + characterController.radius * transform.right;
+		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f + characterController.radius * transform.forward - characterController.radius * transform.right;
+		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f - characterController.radius * transform.forward - characterController.radius * transform.right;
+		Vector3 point5 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f;
+		
+		if(testRay(point1, layermask))
+		{
+			isGrounded = true;
+			return;
+		}
+		if(testRay(point2, layermask))
+		{
+			isGrounded = true;
+			return;
+		}
+		if(testRay(point3, layermask))
+		{
+			isGrounded = true;
+			return;
+		}
+		if(testRay(point4, layermask))
+		{
+			isGrounded = true;
+			return;
+		}
+		if(testRay(point5, layermask))
+		{
+			isGrounded = true;
+			return;
+		}
+		isGrounded = false;
+		return;
 	}
 
 	private void checkInput()
@@ -79,6 +162,66 @@ public class MovementHandler : MonoBehaviour
 		}
 	}
 
+	private void currentAnimationState ()
+	{
+		if (landed)
+		{
+			//setTrigger landed;
+			landed = false;
+		}
+
+		if (!isGrounded)
+		{
+			if (isJumping)
+			{
+				animState = AnimationState.State.Jumping;
+			}
+			else
+			{
+				animState = AnimationState.State.Falling;
+			}
+		}
+		else
+		{
+			if (Mathf.Abs(movement.x + movement.z) < 0.05f)
+			{
+				animState = AnimationState.State.Idle;
+			}
+			else if(Mathf.Abs(movement.x + movement.z) < (Time.deltaTime * moveSpeed / 3))
+			{
+				animState = AnimationState.State.Tiptoeing;
+			}
+			else if(Mathf.Abs(movement.x + movement.z) < (Time.deltaTime * moveSpeed /2))
+			{
+				animState = AnimationState.State.Walking;
+			}
+			else
+			{
+				animState = AnimationState.State.Running;
+			}
+		}
+	}
+
+	private void applyGravity ()
+	{
+		movement.y += lastY;
+		
+		if (!characterController.isGrounded)
+		{
+			movement.y -= gravityForce * Time.deltaTime;
+		}
+		else
+		{
+			movement.y = 0;
+			if (lastY < -1f)
+			{
+				landed = true;
+			}
+		}
+		
+		lastY = movement.y;
+	}
+
 	private void move()
 	{
 		if (isMoving)
@@ -89,92 +232,11 @@ public class MovementHandler : MonoBehaviour
 
 		characterController.Move(movement * Time.deltaTime * moveSpeed * speedModifier);
 	}
-
-	private void applyGravity ()
-	{
-		movement.y += lastY;
-
-		if (!characterController.isGrounded)
-		{
-			movement.y -= gravityForce * Time.deltaTime;
-		}
-		else
-		{
-			movement.y = 0;
-		}
-
-		lastY = movement.y;
-	}
-
+	
 	private void jump()
 	{
 		movement += new Vector3 (0, jumpForce, 0);
 		canJump = false;
-	}
-
-	private void setFlags()
-	{
-		if (movement.x + movement.z < deadZone && movement.x + movement.z > -deadZone)
-		{
-			isMoving = false;
-		}
-
-		else
-		{
-			isMoving = true;
-		}
-
-		if (movement.y < 0.1f)
-		{
-			canJump = true;
-		}
-
-		int layermask;
-
-		int layer = 8;
-		layermask = 1 << layer;
-
-		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f + characterController.radius * transform.forward / 1.2f + characterController.radius * transform.right / 1.2f;
-		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f - characterController.radius * transform.forward / 1.2f + characterController.radius * transform.right / 1.2f;
-		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f + characterController.radius * transform.forward / 1.2f - characterController.radius * transform.right / 1.2f;
-		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f - characterController.radius * transform.forward / 1.2f - characterController.radius * transform.right / 1.2f;
-
-		if(testRay(point1, layermask))
-		{
-			isGrounded = true;
-			return;
-		}
-		else
-		{
-			isGrounded = false;
-		}
-		if(testRay(point2, layermask))
-		{
-			isGrounded = true;
-			return;
-		}
-		else
-		{
-			isGrounded = false;
-		}
-		if(testRay(point3, layermask))
-		{
-			isGrounded = true;
-			return;
-		}
-		else
-		{
-			isGrounded = false;
-		}
-		if(testRay(point4, layermask))
-		{
-			isGrounded = true;
-			return;
-		}
-		else
-		{
-			isGrounded = false;
-		}
 	}
 
 	bool testRay(Vector3 v, int l)
@@ -192,4 +254,8 @@ public class MovementHandler : MonoBehaviour
 		gameObject.transform.position = position;
 	}
 
+	public void deathTrigger(string cause)
+	{
+
+	}
 }

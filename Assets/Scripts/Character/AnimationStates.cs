@@ -2,5 +2,5 @@
 
 public class AnimationState
 {
-	public enum State{Walking = 0, Running = 1, Tiptoeing = 2, Jumping = 3, Falling = 4}
+	public enum State{Idle= 0, Walking = 1, Running = 2, Tiptoeing = 3, Jumping = 4, Falling = 5}
 }
