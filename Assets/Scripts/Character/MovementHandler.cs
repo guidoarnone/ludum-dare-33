@@ -51,6 +51,7 @@ public class MovementHandler : MonoBehaviour
 		characterController = GetComponent<CharacterController>();
 		self = this;
 		canJump = true;
+		canMove = true;
 
 		//We're so sorry (not sorry at all)
 		CameraController.ExistingOrCreateNewMainCamera();
@@ -244,7 +245,7 @@ public class MovementHandler : MonoBehaviour
 		transform.LookAt (transform.position + nonYMovement);
 		}
 
-		if()
+		if(canMove)
 		{
 			characterController.Move(movement * Time.deltaTime * moveSpeed * speedModifier);
 			if (Mathf.Abs(movement.x) + Mathf.Abs(movement.z) < 0.05f && lastXZ > Time.deltaTime * moveSpeed * 0.75f && isGrounded)
@@ -275,6 +276,11 @@ public class MovementHandler : MonoBehaviour
 	public void placeAt(Vector3 position)
 	{
 		gameObject.transform.position = position;
+	}
+
+	public void setMovementLock(bool b)
+	{
+		canMove = b;
 	}
 
 	public void deathTrigger(string cause)
