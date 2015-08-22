@@ -5,12 +5,18 @@ using System.Collections.Generic;
 public class CheckpointManager : MonoBehaviour {
 
 	public List<GameObject> checkpoints;
+	private static CheckpointManager self;
 
 	private Checkpoint getCheckpoint(int checkpointIndex) {
 		return checkpoints[checkpointIndex].GetComponent<Checkpoint>();
 	}
 
+	public static CheckpointManager getInstance() {
+		return self;
+	}
+
 	void Start () {
+		self = this;
 		this.getCheckpoint(0).activate();
 	}
 
