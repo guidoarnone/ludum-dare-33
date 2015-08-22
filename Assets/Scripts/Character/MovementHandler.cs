@@ -16,6 +16,7 @@ public class MovementHandler : MonoBehaviour
 	private bool canJump;
 
 	private bool isMoving;
+	private bool isGrounded;
 	private bool isJumping;
 	private bool isFalling;
 
@@ -41,8 +42,8 @@ public class MovementHandler : MonoBehaviour
 
 	void Update ()
 	{
-		checkInput();
 		setFlags ();
+		checkInput();
 		applyGravity ();
 		move ();
 	}
@@ -61,7 +62,7 @@ public class MovementHandler : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z))
 		{
-			if (canJump)
+			if (canJump && isGrounded)
 			{
 				jump();
 			}
@@ -107,7 +108,8 @@ public class MovementHandler : MonoBehaviour
 
 	private void jump()
 	{
-		movement +=  new Vector3 (0, jumpForce, 0);
+		movement += new Vector3 (0, jumpForce, 0);
+		canJump = false;
 	}
 
 	private void setFlags()
@@ -122,56 +124,62 @@ public class MovementHandler : MonoBehaviour
 			isMoving = true;
 		}
 
+		if (movement.y < 0.1f)
+		{
+			canJump = true;
+		}
+
 		int layermask;
 
 		int layer = 8;
 		layermask = 1 << layer;
 
-		Vector3 point1 = transform.position + Vector3.up * 0.2f + characterController.radius * transform.forward / 2f + characterController.radius * transform.right / 2;
-		Vector3 point2 = transform.position + Vector3.up * 0.2f - characterController.radius * transform.forward / 2f + characterController.radius * transform.right / 2;
-		Vector3 point3 = transform.position + Vector3.up * 0.2f + characterController.radius * transform.forward / 2f - characterController.radius * transform.right / 2;
-		Vector3 point4 = transform.position + Vector3.up * 0.2f - characterController.radius * transform.forward / 2f - characterController.radius * transform.right / 2;
+		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f + characterController.radius * transform.forward / 1.2f + characterController.radius * transform.right / 1.2f;
+		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f - characterController.radius * transform.forward / 1.2f + characterController.radius * transform.right / 1.2f;
+		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f + characterController.radius * transform.forward / 1.2f - characterController.radius * transform.right / 1.2f;
+		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.1f - characterController.radius * transform.forward / 1.2f - characterController.radius * transform.right / 1.2f;
 
 		if(testRay(point1, layermask))
 		{
-			canJump = true;
+			isGrounded = true;
 			return;
 		}
 		else
 		{
-			canJump = false;
+			isGrounded = false;
 		}
 		if(testRay(point2, layermask))
 		{
-			canJump = true;
+			isGrounded = true;
 			return;
 		}
 		else
 		{
-			canJump = false;
+			isGrounded = false;
 		}
 		if(testRay(point3, layermask))
 		{
-			canJump = true;
+			isGrounded = true;
 			return;
 		}
 		else
 		{
-			canJump = false;
+			isGrounded = false;
 		}
 		if(testRay(point4, layermask))
 		{
-			canJump = true;
+			isGrounded = true;
 			return;
 		}
 		else
 		{
-			canJump = false;
+			isGrounded = false;
 		}
 	}
 
 	bool testRay(Vector3 v, int l)
 	{
+		Debug.DrawRay(v, Vector3.down, Color.red);
 		if(Physics.Raycast(v, Vector3.down, groundedBias, l))
 		{
 			return true;
