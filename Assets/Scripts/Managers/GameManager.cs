@@ -23,4 +23,10 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("seen!");
 	}
 
+	//TODO
+	public void killCharacter() {
+		//stuff
+		Debug.Log ("killed!");
+	}
+
 }
