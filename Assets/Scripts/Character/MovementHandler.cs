@@ -19,19 +19,24 @@ public class MovementHandler : MonoBehaviour
 	public bool _isGrounded;
 	public bool _isJumping;
 	public bool _landed;
+	public bool _stopped;
 	public string _animState;
 	//TESTING END
 
 	private bool canJump;
+	private bool canMove;
 
 	private bool isMoving;
 	private bool isGrounded;
 	private bool isJumping;
 	private bool landed;
+	private bool stopped;
 
 	private float lastY;
+	private float lastXZ;
 	private Vector3 movement;
 	private AnimationState.State animState;
+	private Animator animator;
 
 	private static MovementHandler self;
 
@@ -53,12 +58,15 @@ public class MovementHandler : MonoBehaviour
 
 	void Update ()
 	{
+		//Uncomment afetr adding Animator component
+		//animator = transform.GetComponent<Animator>;
 		//DEBUG BLOCK
 		_Y = movement.y;
 		_isMoving = isMoving;
 		_isJumping = isJumping;
 		_isGrounded = isGrounded;
 		_landed = landed;
+		_stopped = stopped;
 		_animState = animState.ToString();
 		//TESTING END
 
@@ -170,6 +178,12 @@ public class MovementHandler : MonoBehaviour
 			landed = false;
 		}
 
+		if (stopped)
+		{
+			//setTrigger stopped;
+			stopped = false;
+		}
+
 		if (!isGrounded)
 		{
 			if (isJumping)
@@ -230,7 +244,16 @@ public class MovementHandler : MonoBehaviour
 		transform.LookAt (transform.position + nonYMovement);
 		}
 
-		characterController.Move(movement * Time.deltaTime * moveSpeed * speedModifier);
+		if()
+		{
+			characterController.Move(movement * Time.deltaTime * moveSpeed * speedModifier);
+			if (Mathf.Abs(movement.x) + Mathf.Abs(movement.z) < 0.05f && lastXZ > Time.deltaTime * moveSpeed * 0.75f && isGrounded)
+			{
+				stopped = true;
+			}
+		}
+
+		lastXZ = Mathf.Abs(movement.x) + Mathf.Abs(movement.z);
 	}
 	
 	private void jump()
