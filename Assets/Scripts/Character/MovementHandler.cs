@@ -110,28 +110,30 @@ public class MovementHandler : MonoBehaviour
 		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f + characterController.radius * transform.forward - characterController.radius * transform.right;
 		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f - characterController.radius * transform.forward - characterController.radius * transform.right;
 		Vector3 point5 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f;
-		
-		if(testRay(point1, layermask))
+
+		Vector3 dir = Vector3.down;
+
+		if(testRay(point1, dir, layermask, groundedBias))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point2, layermask))
+		if(testRay(point2, dir, layermask, groundedBias))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point3, layermask))
+		if(testRay(point3, dir, layermask, groundedBias))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point4, layermask))
+		if(testRay(point4, dir, layermask, groundedBias))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point5, layermask))
+		if(testRay(point5, dir, layermask, groundedBias))
 		{
 			isGrounded = true;
 			return;
@@ -223,6 +225,20 @@ public class MovementHandler : MonoBehaviour
 		
 		if (!characterController.isGrounded)
 		{
+			if (movement.y > 0.1f)
+			{
+				int layermask;
+				
+				int layer = 8;
+				layermask = 1 << layer;
+				Vector3 point = transform.position + Vector3.up * characterController.height / 2 + Vector3.down * 0.2f;
+
+				if (testRay(point, Vector3.up, layermask, groundedBias / 2))
+				{
+					movement.y = 0;
+				}
+			}
+
 			movement.y -= gravityForce * Time.deltaTime;
 		}
 		else
@@ -263,10 +279,10 @@ public class MovementHandler : MonoBehaviour
 		canJump = false;
 	}
 
-	bool testRay(Vector3 v, int l)
+	bool testRay(Vector3 v, Vector3 d, int l, float bias)
 	{
-		Debug.DrawRay(v, Vector3.down, Color.red);
-		if(Physics.Raycast(v, Vector3.down, groundedBias, l))
+		Debug.DrawRay(v, d, Color.red);
+		if(Physics.Raycast(v, d, bias, l))
 		{
 			return true;
 		}
