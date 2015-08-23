@@ -10,6 +10,7 @@ public class MovementHandler : MonoBehaviour
 	public float groundedBias;
 	public float jumpForce;
 	public float gravityForce;
+	public float maxStandAngle;
 	public float maxFallSpeed;
 	public float deadZone;
 
@@ -23,6 +24,7 @@ public class MovementHandler : MonoBehaviour
 	public string _animState;
 	//TESTING END
 
+	private bool externalMovementLock;
 	private bool canJump;
 	private bool canMove;
 
@@ -32,6 +34,7 @@ public class MovementHandler : MonoBehaviour
 	private bool landed;
 	private bool stopped;
 
+	private float standNormal;
 	private float lastY;
 	private float lastXZ;
 	private Vector3 movement;
@@ -52,6 +55,7 @@ public class MovementHandler : MonoBehaviour
 		self = this;
 		canJump = true;
 		canMove = true;
+		externalMovementLock = false;
 
 		//We're so sorry (not sorry at all)
 		CameraController.ExistingOrCreateNewMainCamera();
@@ -61,7 +65,9 @@ public class MovementHandler : MonoBehaviour
 	{
 		//Uncomment afetr adding Animator component
 		//animator = transform.GetComponent<Animator>;
+
 		//DEBUG BLOCK
+		Debug.Log (standNormal);
 		_Y = movement.y;
 		_isMoving = isMoving;
 		_isJumping = isJumping;
@@ -72,6 +78,7 @@ public class MovementHandler : MonoBehaviour
 		//TESTING END
 
 		setFlags ();
+		checkCanMove ();
 		checkInput();
 		currentAnimationState ();
 		applyGravity ();
@@ -113,33 +120,63 @@ public class MovementHandler : MonoBehaviour
 
 		Vector3 dir = Vector3.down;
 
-		if(testRay(point1, dir, layermask, groundedBias))
+		standNormal = 180f;
+		RaycastHit r;
+		Physics.Raycast (point1, dir, out r,groundedBias, layermask);
+		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		if(testRay(point1, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point2, dir, layermask, groundedBias))
+
+		Physics.Raycast (point2, dir, out r,groundedBias, layermask);
+		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		if(testRay(point2, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point3, dir, layermask, groundedBias))
+
+		Physics.Raycast (point3, dir, out r,groundedBias, layermask);
+		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		if(testRay(point3, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point4, dir, layermask, groundedBias))
+
+		Physics.Raycast (point4, dir, out r,groundedBias, layermask);
+		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		if(testRay(point4, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
 			return;
 		}
-		if(testRay(point5, dir, layermask, groundedBias))
+
+		Physics.Raycast (point5, dir, out r,groundedBias, layermask);
+		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		if(testRay(point5, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
 			return;
 		}
+		checkExcessNormal ();
 		isGrounded = false;
+		Debug.Log ("kinda works");
 		return;
+	}
+
+	private void checkCanMove()
+	{
+		if (standNormal <= maxStandAngle && externalMovementLock == false)
+		{
+			canMove = true;
+		}
+		else
+		{
+			canMove = false;
+		}
 	}
 
 	private void checkInput()
@@ -223,7 +260,7 @@ public class MovementHandler : MonoBehaviour
 	{
 		movement.y += lastY;
 		
-		if (!characterController.isGrounded)
+		if (!isGrounded)
 		{
 			if (movement.y > 0.1f)
 			{
@@ -231,7 +268,7 @@ public class MovementHandler : MonoBehaviour
 				
 				int layer = 8;
 				layermask = 1 << layer;
-				Vector3 point = transform.position + Vector3.up * characterController.height / 2 + Vector3.down * 0.2f;
+				Vector3 point = transform.position + Vector3.up * characterController.height / 2 + Vector3.down * 0.1f;
 
 				if (testRay(point, Vector3.up, layermask, groundedBias / 2))
 				{
@@ -240,12 +277,14 @@ public class MovementHandler : MonoBehaviour
 			}
 
 			movement.y -= gravityForce * Time.deltaTime;
+			movement.y = Mathf.Clamp(movement.y, -maxFallSpeed, 100f);
 		}
+
 		else
 		{
-			movement.y = 0;
 			if (lastY < -1f)
 			{
+				movement.y = 0;
 				landed = true;
 			}
 		}
@@ -276,6 +315,7 @@ public class MovementHandler : MonoBehaviour
 	private void jump()
 	{
 		movement += new Vector3 (0, jumpForce, 0);
+		Debug.Log ("J");
 		canJump = false;
 	}
 
@@ -289,6 +329,22 @@ public class MovementHandler : MonoBehaviour
 		return false;
 	}
 
+	void saveMinorStandNormal(float n)
+	{
+		if ( n < 90f && n < standNormal)
+		{
+			standNormal = n;
+		}
+	}
+
+	void checkExcessNormal()
+	{
+		if (standNormal > 120f)
+		{
+			standNormal = 0;
+		}
+	}
+
 	public void placeAt(Vector3 position)
 	{
 		gameObject.transform.position = position;
@@ -296,7 +352,7 @@ public class MovementHandler : MonoBehaviour
 
 	public void setMovementLock(bool b)
 	{
-		canMove = b;
+		externalMovementLock = b;
 	}
 
 	public void deathTrigger(string cause)
