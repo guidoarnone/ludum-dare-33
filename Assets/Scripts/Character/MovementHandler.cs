@@ -12,6 +12,7 @@ public class MovementHandler : MonoBehaviour
 	public float gravityForce;
 	public float maxStandAngle;
 	public float maxFallSpeed;
+	public int checkRayNumber;
 	public float deadZone;
 
 	//DEBUG BLOCK
@@ -31,6 +32,7 @@ public class MovementHandler : MonoBehaviour
 	private bool isMoving;
 	private bool isGrounded;
 	private bool isJumping;
+	private bool isSliding;
 	private bool landed;
 	private bool stopped;
 
@@ -112,56 +114,36 @@ public class MovementHandler : MonoBehaviour
 		
 		int layer = 8;
 		layermask = 1 << layer;
-		
-		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f + characterController.radius * 0.8f * transform.forward + 0.8f * characterController.radius * transform.right;
-		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f - characterController.radius * 0.8f * transform.forward + 0.8f *characterController.radius * transform.right;
-		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f + characterController.radius * 0.8f * transform.forward - 0.8f * characterController.radius * transform.right;
-		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f - characterController.radius * 0.8f * transform.forward - 0.8f * characterController.radius * transform.right;
-		Vector3 point5 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f;
 
+		Vector3[] checkRays = new Vector3[checkRayNumber + 1];
+
+		for (int i = 0; i < checkRayNumber; i++)
+		{
+			float angle = 360f / checkRayNumber * i;
+			Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
+			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6f + characterController.radius * 1.1f * direction);
+			checkRays[i] = v;
+		}
+
+		checkRays[checkRayNumber] = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6;
 		Vector3 dir = Vector3.down;
-
+		
 		standNormalAngle = 180f;
 		RaycastHit r;
-		Physics.Raycast (point1, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
-		if(testRay(point1, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
+
+		for (int i = 0; i < checkRayNumber + 1; i++)
 		{
-			isGrounded = true;
-			return;
+			bool l = testRay(checkRays[i], dir, layermask, groundedBias);
+			if (Physics.Raycast (checkRays[i], dir, out r, groundedBias, layermask) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
+			{
+				isGrounded = true;
+				saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
+				return;
+			}
+
+			saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		}
 
-		Physics.Raycast (point2, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
-		if(testRay(point2, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
-		{
-			isGrounded = true;
-			return;
-		}
-
-		Physics.Raycast (point3, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
-		if(testRay(point3, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
-		{
-			isGrounded = true;
-			return;
-		}
-
-		Physics.Raycast (point4, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
-		if(testRay(point4, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
-		{
-			isGrounded = true;
-			return;
-		}
-
-		Physics.Raycast (point5, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
-		if(testRay(point5, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
-		{
-			isGrounded = true;
-			return;
-		}
 		checkExcessNormal ();
 		isGrounded = false;
 		Debug.Log ("kinda works");
@@ -173,9 +155,11 @@ public class MovementHandler : MonoBehaviour
 		if (standNormalAngle <= maxStandAngle && externalMovementLock == false)
 		{
 			canMove = true;
+			isSliding = true;
 		}
 		else
 		{
+			isSliding = false;
 			canMove = false;
 		}
 	}
@@ -287,10 +271,20 @@ public class MovementHandler : MonoBehaviour
 			{
 				movement.y = 0;
 				landed = true;
+				if (lastY < maxFallSpeed * -0.75f)
+				{
+					externalMovementLock = true;
+					Invoke("revokeMoveLock", 0.25f);
+				}
 			}
 		}
 		
 		lastY = movement.y;
+	}
+
+	private void revokeMoveLock()
+	{
+		externalMovementLock = false;
 	}
 
 	private void move()
@@ -309,7 +303,7 @@ public class MovementHandler : MonoBehaviour
 				stopped = true;
 			}
 		}
-		else if (externalMovementLock == false)
+		else if (externalMovementLock == false && isSliding)
 		{
 			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z);
 			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
