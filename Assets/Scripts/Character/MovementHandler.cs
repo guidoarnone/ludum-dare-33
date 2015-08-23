@@ -7,8 +7,6 @@ public class MovementHandler : MonoBehaviour
 
 	public Transform lookAt;
 	public float moveSpeed;
-	public float accelerationSquared;
-	public float maxAcceleration;
 	public float groundedBias;
 	public float jumpForce;
 	public float gravityForce;
@@ -127,7 +125,7 @@ public class MovementHandler : MonoBehaviour
 		{
 			float angle = 360f / checkRayNumber * i;
 			Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
-			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6f + characterController.radius * 1.2f * direction);
+			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 4f + characterController.radius * 1.2f * direction);
 			checkRays[i] = v;
 		}
 
@@ -181,19 +179,6 @@ public class MovementHandler : MonoBehaviour
 		
 		movement = (forward * y + right * x);
 		movement.Normalize();
-
-		if (x + y != 0)
-		{
-			acceleration += accelerationSquared;
-		}
-		else
-		{
-			acceleration -= accelerationSquared;
-		}
-
-		Mathf.Clamp (acceleration, 0, Mathf.Sqrt(maxAcceleration));
-
-		movement *= acceleration * acceleration;
 
 		if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z))
 		{
@@ -324,16 +309,16 @@ public class MovementHandler : MonoBehaviour
 		}
 		else if (externalMovementLock == false && isSliding)
 		{
-			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z);
+			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z) * standNormalAngle / 20f;
 			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
 		}
+
 		lastXZ = Mathf.Abs(movement.x) + Mathf.Abs(movement.z);
 	}
 	
 	private void jump()
 	{
 		movement += new Vector3 (0, jumpForce, 0);
-		Debug.Log ("J");
 		canJump = false;
 	}
 
