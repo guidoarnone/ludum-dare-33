@@ -36,6 +36,7 @@ public class MovementHandler : MonoBehaviour
 	private bool isGrounded;
 	private bool isJumping;
 	private bool isSliding;
+	private bool isTransformed;
 	private bool landed;
 	private bool stopped;
 	
@@ -45,6 +46,7 @@ public class MovementHandler : MonoBehaviour
 	private float lastXZ;
 	private Vector3 standNormal;
 	private Vector3 movement;
+	private AnimationState.State lastAnimState;
 	private AnimationState.State animState;
 	private Animator animator;
 
@@ -62,6 +64,7 @@ public class MovementHandler : MonoBehaviour
 		self = this;
 		canJump = true;
 		canMove = true;
+		isTransformed = false;
 		externalMovementLock = false;
 
 		//We're so sorry (not sorry at all)
@@ -86,10 +89,14 @@ public class MovementHandler : MonoBehaviour
 
 		setFlags ();
 		checkCanMove ();
+		Debug.Log (standNormalAngle);
+
 		checkInput();
 		currentAnimationState ();
 		applyGravity ();
 		move ();
+
+		lastAnimState = animState;
 	}
 
 	private void setFlags()
@@ -113,28 +120,33 @@ public class MovementHandler : MonoBehaviour
 		{
 			isJumping = true;
 		}
-		
+
+		checkNormals ();
+	}
+
+	private void checkNormals()
+	{
 		int layermask;
 		
 		int layer = 8;
 		layermask = 1 << layer;
-
+		
 		Vector3[] checkRays = new Vector3[checkRayNumber + 1];
-
+		
 		for (int i = 0; i < checkRayNumber; i++)
 		{
 			float angle = 360f / checkRayNumber * i;
 			Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
-			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 4f + characterController.radius * 1.2f * direction);
+			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 3f + characterController.radius * 1.2f * direction);
 			checkRays[i] = v;
 		}
-
+		
 		checkRays[checkRayNumber] = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6;
 		Vector3 dir = Vector3.down;
 		
 		standNormalAngle = 180f;
 		RaycastHit r;
-
+		
 		for (int i = 0; i < checkRayNumber + 1; i++)
 		{
 			//DEBUG
@@ -145,10 +157,10 @@ public class MovementHandler : MonoBehaviour
 				saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 				return;
 			}
-
+			
 			saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		}
-
+		
 		checkExcessNormal ();
 		isGrounded = false;
 		return;
@@ -156,7 +168,7 @@ public class MovementHandler : MonoBehaviour
 
 	private void checkCanMove()
 	{
-		if (standNormalAngle <= maxStandAngle && externalMovementLock == false)
+		if ((standNormalAngle <= maxStandAngle && externalMovementLock == false) || movement.y > 0.1f)
 		{
 			canMove = true;
 			isSliding = false;
@@ -168,8 +180,44 @@ public class MovementHandler : MonoBehaviour
 		}
 	}
 
+	private void startDetransform()
+	{
+		Invoke("actualDetransform", 0.5f);
+	}
+
+	public void actualDetransform()
+	{
+		externalMovementLock = false;
+		isTransformed = false;
+	}
+
+	private void startTransform()
+	{
+		Invoke("actualTransform", 0.5f);
+	}
+
+	public void actualTransform()
+	{
+		isTransformed = true;
+	}
+
 	private void checkInput()
 	{
+		if (Input.GetKey(KeyCode.E))
+		{
+			Debug.Log("e");
+			if (isTransformed)
+			{
+				startDetransform();
+			}
+
+			else if (externalMovementLock == false)
+			{
+				externalMovementLock = true;
+				startTransform();
+			}
+		}
+
 		float x = Input.GetAxis("Horizontal");
 		float y = Input.GetAxis("Vertical");
 		
@@ -219,6 +267,10 @@ public class MovementHandler : MonoBehaviour
 			{
 				animState = AnimationState.State.Jumping;
 			}
+			else if (isSliding)
+			{
+				animState = AnimationState.State.Sliding;
+			}
 			else
 			{
 				animState = AnimationState.State.Falling;
@@ -248,9 +300,16 @@ public class MovementHandler : MonoBehaviour
 	private void applyGravity ()
 	{
 		movement.y += lastY;
-		
+
+
+
 		if (!isGrounded)
 		{
+			if (lastAnimState == AnimationState.State.Sliding && animState != lastAnimState)
+			{
+				movement.y = 0;
+			}
+
 			if (movement.y > 0.1f)
 			{
 				int layermask;
@@ -309,7 +368,7 @@ public class MovementHandler : MonoBehaviour
 		}
 		else if (externalMovementLock == false && isSliding)
 		{
-			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z) * standNormalAngle / 20f;
+			Vector3 slideMove = new Vector3(standNormal.x, -standNormalAngle / 10f, standNormal.z) / Mathf.Sqrt(standNormalAngle) * 5;
 			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
 		}
 
