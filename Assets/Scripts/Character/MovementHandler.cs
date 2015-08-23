@@ -7,6 +7,8 @@ public class MovementHandler : MonoBehaviour
 
 	public Transform lookAt;
 	public float moveSpeed;
+	public float accelerationSquared;
+	public float maxAcceleration;
 	public float groundedBias;
 	public float jumpForce;
 	public float gravityForce;
@@ -16,7 +18,6 @@ public class MovementHandler : MonoBehaviour
 	public float deadZone;
 
 	//DEBUG BLOCK
-	public float _Y;
 	public bool _isMoving;
 	public bool _isGrounded;
 	public bool _isJumping;
@@ -24,6 +25,9 @@ public class MovementHandler : MonoBehaviour
 	public bool _landed;
 	public bool _stopped;
 	public string _animState;
+	public float _X;
+	public float _Z;
+	public float _Y;
 	//TESTING END
 
 	private bool externalMovementLock;
@@ -36,7 +40,8 @@ public class MovementHandler : MonoBehaviour
 	private bool isSliding;
 	private bool landed;
 	private bool stopped;
-
+	
+	private float acceleration;
 	private float standNormalAngle;
 	private float lastY;
 	private float lastXZ;
@@ -71,7 +76,6 @@ public class MovementHandler : MonoBehaviour
 		//animator = transform.GetComponent<Animator>;
 
 		//DEBUG BLOCK
-		Debug.Log (standNormalAngle);
 		_Y = movement.y;
 		_isMoving = isMoving;
 		_isJumping = isJumping;
@@ -135,6 +139,7 @@ public class MovementHandler : MonoBehaviour
 
 		for (int i = 0; i < checkRayNumber + 1; i++)
 		{
+			//DEBUG
 			bool l = testRay(checkRays[i], dir, layermask, groundedBias);
 			if (Physics.Raycast (checkRays[i], dir, out r, groundedBias, layermask) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 			{
@@ -148,7 +153,6 @@ public class MovementHandler : MonoBehaviour
 
 		checkExcessNormal ();
 		isGrounded = false;
-		Debug.Log ("kinda works");
 		return;
 	}
 
@@ -175,8 +179,21 @@ public class MovementHandler : MonoBehaviour
 		Vector3 forward = CameraController.Instance.getViewVector();
 		Vector3 right = Quaternion.AngleAxis(90, Vector3.up) * forward;
 		
-		movement = forward * y + right * x;
+		movement = (forward * y + right * x);
 		movement.Normalize();
+
+		if (x + y != 0)
+		{
+			acceleration += accelerationSquared;
+		}
+		else
+		{
+			acceleration -= accelerationSquared;
+		}
+
+		Mathf.Clamp (acceleration, 0, Mathf.Sqrt(maxAcceleration));
+
+		movement *= acceleration * acceleration;
 
 		if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z))
 		{
@@ -310,7 +327,6 @@ public class MovementHandler : MonoBehaviour
 			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z);
 			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
 		}
-
 		lastXZ = Mathf.Abs(movement.x) + Mathf.Abs(movement.z);
 	}
 	
