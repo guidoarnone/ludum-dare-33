@@ -20,6 +20,7 @@ public class MovementHandler : MonoBehaviour
 	public bool _isMoving;
 	public bool _isGrounded;
 	public bool _isJumping;
+	public bool _isSliding;
 	public bool _landed;
 	public bool _stopped;
 	public string _animState;
@@ -75,6 +76,7 @@ public class MovementHandler : MonoBehaviour
 		_isMoving = isMoving;
 		_isJumping = isJumping;
 		_isGrounded = isGrounded;
+		_isSliding = isSliding;
 		_landed = landed;
 		_stopped = stopped;
 		_animState = animState.ToString();
@@ -155,11 +157,11 @@ public class MovementHandler : MonoBehaviour
 		if (standNormalAngle <= maxStandAngle && externalMovementLock == false)
 		{
 			canMove = true;
-			isSliding = true;
+			isSliding = false;
 		}
 		else
 		{
-			isSliding = false;
+			isSliding = true;
 			canMove = false;
 		}
 	}
