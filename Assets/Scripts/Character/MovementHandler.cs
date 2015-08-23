@@ -63,7 +63,6 @@ public class MovementHandler : MonoBehaviour
 		self = this;
 		canJump = true;
 		canMove = true;
-		isTransformed = false;
 		externalMovementLock = false;
 
 		//We're so sorry (not sorry at all)
