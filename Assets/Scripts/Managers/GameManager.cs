@@ -19,15 +19,12 @@ public class GameManager : MonoBehaviour {
 
 	//TODO
 	public void characterWasSeen() {
-		//checks if the character is hidden
-		//if not, game over
 		Debug.Log("seen!");
 		this.resetPositionToLastCheckpoint ();
 	}
 
 	//TODO
 	public void killCharacter() {
-		//more stuff
 		Debug.Log ("killed!");
 		this.resetPositionToLastCheckpoint ();
 	}

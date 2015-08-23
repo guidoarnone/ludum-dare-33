@@ -36,7 +36,6 @@ public class MovementHandler : MonoBehaviour
 	private bool isGrounded;
 	private bool isJumping;
 	private bool isSliding;
-	private bool isTransformed;
 	private bool landed;
 	private bool stopped;
 	
@@ -180,7 +179,7 @@ public class MovementHandler : MonoBehaviour
 		}
 	}
 
-	private void startDetransform()
+	/*public void startDetransform()
 	{
 		Invoke("actualDetransform", 0.5f);
 	}
@@ -191,7 +190,7 @@ public class MovementHandler : MonoBehaviour
 		isTransformed = false;
 	}
 
-	private void startTransform()
+	public void startTransform()
 	{
 		Invoke("actualTransform", 0.5f);
 	}
@@ -199,25 +198,10 @@ public class MovementHandler : MonoBehaviour
 	public void actualTransform()
 	{
 		isTransformed = true;
-	}
+	}*/
 
 	private void checkInput()
 	{
-		if (Input.GetKey(KeyCode.E))
-		{
-			Debug.Log("e");
-			if (isTransformed)
-			{
-				startDetransform();
-			}
-
-			else if (externalMovementLock == false)
-			{
-				externalMovementLock = true;
-				startTransform();
-			}
-		}
-
 		float x = Input.GetAxis("Horizontal");
 		float y = Input.GetAxis("Vertical");
 		
