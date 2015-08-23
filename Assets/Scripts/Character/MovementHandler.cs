@@ -123,7 +123,7 @@ public class MovementHandler : MonoBehaviour
 		{
 			float angle = 360f / checkRayNumber * i;
 			Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
-			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6f + characterController.radius * 1.1f * direction);
+			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6f + characterController.radius * 1.2f * direction);
 			checkRays[i] = v;
 		}
 
