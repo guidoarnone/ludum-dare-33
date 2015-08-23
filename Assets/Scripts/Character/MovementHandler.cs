@@ -34,9 +34,10 @@ public class MovementHandler : MonoBehaviour
 	private bool landed;
 	private bool stopped;
 
-	private float standNormal;
+	private float standNormalAngle;
 	private float lastY;
 	private float lastXZ;
+	private Vector3 standNormal;
 	private Vector3 movement;
 	private AnimationState.State animState;
 	private Animator animator;
@@ -67,7 +68,7 @@ public class MovementHandler : MonoBehaviour
 		//animator = transform.GetComponent<Animator>;
 
 		//DEBUG BLOCK
-		Debug.Log (standNormal);
+		Debug.Log (standNormalAngle);
 		_Y = movement.y;
 		_isMoving = isMoving;
 		_isJumping = isJumping;
@@ -112,18 +113,18 @@ public class MovementHandler : MonoBehaviour
 		int layer = 8;
 		layermask = 1 << layer;
 		
-		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f + characterController.radius * transform.forward + characterController.radius * transform.right;
-		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f - characterController.radius * transform.forward + characterController.radius * transform.right;
-		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f + characterController.radius * transform.forward - characterController.radius * transform.right;
-		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f - characterController.radius * transform.forward - characterController.radius * transform.right;
-		Vector3 point5 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.2f;
+		Vector3 point1 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f + characterController.radius * 0.8f * transform.forward + 0.8f * characterController.radius * transform.right;
+		Vector3 point2 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f - characterController.radius * 0.8f * transform.forward + 0.8f *characterController.radius * transform.right;
+		Vector3 point3 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f + characterController.radius * 0.8f * transform.forward - 0.8f * characterController.radius * transform.right;
+		Vector3 point4 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f - characterController.radius * 0.8f * transform.forward - 0.8f * characterController.radius * transform.right;
+		Vector3 point5 = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * 0.3f;
 
 		Vector3 dir = Vector3.down;
 
-		standNormal = 180f;
+		standNormalAngle = 180f;
 		RaycastHit r;
 		Physics.Raycast (point1, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		if(testRay(point1, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
@@ -131,7 +132,7 @@ public class MovementHandler : MonoBehaviour
 		}
 
 		Physics.Raycast (point2, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		if(testRay(point2, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
@@ -139,7 +140,7 @@ public class MovementHandler : MonoBehaviour
 		}
 
 		Physics.Raycast (point3, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		if(testRay(point3, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
@@ -147,7 +148,7 @@ public class MovementHandler : MonoBehaviour
 		}
 
 		Physics.Raycast (point4, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		if(testRay(point4, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
@@ -155,7 +156,7 @@ public class MovementHandler : MonoBehaviour
 		}
 
 		Physics.Raycast (point5, dir, out r,groundedBias, layermask);
-		saveMinorStandNormal(Vector3.Angle (r.normal, Vector3.up));
+		saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
 		if(testRay(point5, dir, layermask, groundedBias) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 		{
 			isGrounded = true;
@@ -169,7 +170,7 @@ public class MovementHandler : MonoBehaviour
 
 	private void checkCanMove()
 	{
-		if (standNormal <= maxStandAngle && externalMovementLock == false)
+		if (standNormalAngle <= maxStandAngle && externalMovementLock == false)
 		{
 			canMove = true;
 		}
@@ -308,6 +309,11 @@ public class MovementHandler : MonoBehaviour
 				stopped = true;
 			}
 		}
+		else if (externalMovementLock == false)
+		{
+			Vector3 slideMove = new Vector3(standNormal.x, movement.y, standNormal.z);
+			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
+		}
 
 		lastXZ = Mathf.Abs(movement.x) + Mathf.Abs(movement.z);
 	}
@@ -329,19 +335,20 @@ public class MovementHandler : MonoBehaviour
 		return false;
 	}
 
-	void saveMinorStandNormal(float n)
+	void saveMinorStandNormal(Vector3 r, float n)
 	{
-		if ( n < 90f && n < standNormal)
+		if ( n < 90f && n < standNormalAngle)
 		{
-			standNormal = n;
+			standNormalAngle = n;
+			standNormal = r;
 		}
 	}
 
 	void checkExcessNormal()
 	{
-		if (standNormal > 120f)
+		if (standNormalAngle > 120f)
 		{
-			standNormal = 0;
+			standNormalAngle = 0;
 		}
 	}
 
