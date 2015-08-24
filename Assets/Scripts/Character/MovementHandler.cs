@@ -215,6 +215,7 @@ public class MovementHandler : MonoBehaviour
 		{
 			if (canJump && isGrounded && externalMovementLock == false)
 			{
+				animator.SetTrigger ("Jump");
 				jump();
 			}
 		}
@@ -322,6 +323,10 @@ public class MovementHandler : MonoBehaviour
 				{
 					animator.SetTrigger("softLand");
 				}
+			}
+			else
+			{
+				animator.ResetTrigger("softLand");
 			}
 		}
 		
