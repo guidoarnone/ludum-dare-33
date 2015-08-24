@@ -1,50 +1,32 @@
 fileFormatVersion: 2
-guid: 9f7ea29fc23a2d147b6b48eb18816e8f
-timeCreated: 1440383117
+guid: 91b22eeabb0dc7a449f2e6697914ef4d
+timeCreated: 1440452600
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box004
-    100004: Box005
-    100006: Box006
-    100008: Cylinder002
-    100010: //RootNode
-    100012: Sphere001
-    100014: Sphere002
-    400000: Box001
-    400002: Box004
-    400004: Box005
-    400006: Box006
-    400008: Cylinder002
-    400010: //RootNode
-    400012: Sphere001
-    400014: Sphere002
-    2300000: Box001
-    2300002: Box004
-    2300004: Box005
-    2300006: Box006
-    2300008: Cylinder002
-    2300010: Sphere001
-    2300012: Sphere002
-    3300000: Box001
-    3300002: Box004
-    3300004: Box005
-    3300006: Box006
-    3300008: Cylinder002
-    3300010: Sphere001
-    3300012: Sphere002
-    4300000: Box001
-    4300002: Box004
-    4300004: Cylinder002
-    4300006: Sphere001
-    4300008: Box005
-    4300010: Sphere002
-    4300012: Box006
+    100000: bn_mouseTrap_alambre
+    100002: bn_mouseTrap_base
+    100004: bn_mouseTrap_enganche
+    100006: bne_mouseTrap_alambre
+    100008: bne_mouseTrap_base
+    100010: bne_mouseTrap_enganche
+    100012: Mouse_Trao
+    100014: //RootNode
+    400000: bn_mouseTrap_alambre
+    400002: bn_mouseTrap_base
+    400004: bn_mouseTrap_enganche
+    400006: bne_mouseTrap_alambre
+    400008: bne_mouseTrap_base
+    400010: bne_mouseTrap_enganche
+    400012: Mouse_Trao
+    400014: //RootNode
+    4300000: Mouse_Trao
+    7400000: Take 001
     9500000: //RootNode
+    13700000: Mouse_Trao
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -86,7 +68,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
