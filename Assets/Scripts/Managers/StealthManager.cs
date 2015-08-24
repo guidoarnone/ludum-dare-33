@@ -38,4 +38,8 @@ public class StealthManager : MonoBehaviour {
 		hidden = s;
 	}
 
+	public bool isHidden() {
+		return hidden == StealthState.HIDDEN;
+	}
+
 }

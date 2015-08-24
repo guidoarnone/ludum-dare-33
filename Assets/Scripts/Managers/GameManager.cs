@@ -19,13 +19,18 @@ public class GameManager : MonoBehaviour {
 
 	//TODO
 	public void characterWasSeen() {
-		Debug.Log("seen!");
-		this.resetPositionToLastCheckpoint ();
+		if(!StealthManager.getInstance().isHidden()){
+			Debug.Log("seen!");
+			this.resetPositionToLastCheckpoint ();
+		}
 	}
 
 	//TODO
 	public void killCharacter() {
 		Debug.Log ("killed!");
+		if (StealthManager.getInstance ().isHidden ()) {
+			StealthManager.getInstance ().show();
+		}
 		this.resetPositionToLastCheckpoint ();
 	}
 
