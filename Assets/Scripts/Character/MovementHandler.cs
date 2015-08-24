@@ -87,7 +87,6 @@ public class MovementHandler : MonoBehaviour
 
 		setFlags ();
 		checkCanMove ();
-		Debug.Log (standNormalAngle);
 
 		checkInput();
 		currentAnimationState ();

@@ -2,19 +2,26 @@
 using System.Collections;
 
 public class EnemyVision : MonoBehaviour {
+	
+	public GameObject raycastOrigin;
+	private const int charLayerMask = 1 << 9;
+	private const int allLayerMask = 1 << 8;
 
-//	public GameObject raycastOrigin;
-//
-//	///TODO
-//	void OnTriggerEnter(Collider c) {
-//		if (c.tag == GameManager.CHARACTER_TAG) {
-//			int charLayerMask = 1 << 9, allLayerMask = 1 << 8;
-//			int raycastMask = charLayerMask | allLayerMask;
-//			//Vector3 dir = ()
-//			RaycastHit r;
-//			Physics.Raycast(raycastOrigin.transform.position, dir, r, 100f, raycastMask);
-//			GameManager.getInstance().characterWasSeen();
-//		}
-//	}
+	void OnTriggerStay(Collider c) {
+		if (c.tag == GameManager.CHARACTER_TAG) {
+			int raycastMask = charLayerMask | allLayerMask;
+			RaycastHit r;
+			if(Physics.Raycast(raycastOrigin.transform.position, this.getRaycastDirection(),out r, 100f, raycastMask)) {
+				if(r.collider.tag == GameManager.CHARACTER_TAG) {
+					GameManager.getInstance().characterWasSeen();
+				}
+			}
+		}
+	}
 
+	Vector3 getRaycastDirection() {
+		Vector3 charPosition = GameManager.getInstance().character.transform.position;
+		return (charPosition - raycastOrigin.transform.position).normalized;
+	}
+	
 }
