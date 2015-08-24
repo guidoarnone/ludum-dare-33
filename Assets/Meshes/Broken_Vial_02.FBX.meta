@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6da5b83d503e67744be4a3b5ad098c5c
-timeCreated: 1440383117
+guid: 084f8f4530f246946a90e077e14e89e8
+timeCreated: 1440428771
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -17,9 +17,10 @@ ModelImporter:
     3300002: Object002
     4300000: Box004
     4300002: Object002
+    7400000: Take 001
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:

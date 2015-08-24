@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: 21e6bea705738ce4dad4cb1688fcb9cf
-timeCreated: 1440428771
+guid: d5065bdabc50b0b47bd6eaea4eefec7e
+timeCreated: 1440427501
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Object001
-    100004: Sphere002
-    400000: //RootNode
-    400002: Object001
-    400004: Sphere002
+    100000: Object001
+    100002: //RootNode
+    100004: StraightStair001
+    400000: Object001
+    400002: //RootNode
+    400004: StraightStair001
     2300000: Object001
-    2300002: Sphere002
+    2300002: StraightStair001
     3300000: Object001
-    3300002: Sphere002
-    4300000: Sphere002
+    3300002: StraightStair001
+    4300000: StraightStair001
     4300002: Object001
-    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

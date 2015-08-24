@@ -1,23 +1,24 @@
 fileFormatVersion: 2
-guid: 21e6bea705738ce4dad4cb1688fcb9cf
-timeCreated: 1440428771
+guid: 0e770f9582a14c24a9297ca0d95260ba
+timeCreated: 1440427042
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
     100002: Object001
-    100004: Sphere002
+    100004: Particle View 001
+    100006: SpiralStair002
     400000: //RootNode
     400002: Object001
-    400004: Sphere002
+    400004: Particle View 001
+    400006: SpiralStair002
     2300000: Object001
-    2300002: Sphere002
+    2300002: SpiralStair002
     3300000: Object001
-    3300002: Sphere002
-    4300000: Sphere002
+    3300002: SpiralStair002
+    4300000: SpiralStair002
     4300002: Object001
-    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
