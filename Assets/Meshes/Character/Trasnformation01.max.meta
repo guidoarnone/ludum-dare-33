@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 53175c439a066bf4fa60b63099dde50e
-timeCreated: 1440441184
+guid: 9c66ba989baaf13418bd1f0e73fbe8e9
+timeCreated: 1440444403
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -88,7 +88,7 @@ ModelImporter:
     4300000: Box002
     4300002: Skin_ZSphere5
     4300004: Skin_ZSphere1
-    7400000: Sliding
+    7400000: Transformationv2
     9500000: //RootNode
     13700000: Box002
     13700002: Skin_ZSphere1
@@ -113,10 +113,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sliding
+      name: Transformationv2
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 25
+      lastFrame: 87
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

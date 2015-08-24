@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 46f0d826d6f479c4cbdaf30bdc948ca9
-timeCreated: 1440441179
+guid: 154f051764200b1479e5f6bff44dfce9
+timeCreated: 1440444399
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -88,7 +88,7 @@ ModelImporter:
     4300000: Box002
     4300002: Skin_ZSphere5
     4300004: Skin_ZSphere1
-    7400000: Stopped
+    7400000: Slidingv2
     9500000: //RootNode
     13700000: Box002
     13700002: Skin_ZSphere1
@@ -113,10 +113,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Stopped
+      name: Slidingv2
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

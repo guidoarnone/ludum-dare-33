@@ -139,7 +139,7 @@ public class MovementHandler : MonoBehaviour
 			checkRays[i] = v;
 		}
 		
-		checkRays[checkRayNumber] = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 6;
+		checkRays[checkRayNumber] = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 3f;
 		Vector3 dir = Vector3.down;
 		
 		standNormalAngle = 180f;
@@ -148,8 +148,8 @@ public class MovementHandler : MonoBehaviour
 		for (int i = 0; i < checkRayNumber + 1; i++)
 		{
 			//DEBUG
-			bool l = testRay(checkRays[i], dir, layermask, groundedBias);
-			if (Physics.Raycast (checkRays[i], dir, out r, groundedBias, layermask) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
+			bool l = testRay(checkRays[i], dir * groundedBias, layermask, groundedBias);
+			if (movement.y < 0.1f && Physics.Raycast (checkRays[i], dir, out r, groundedBias, layermask) && (Vector3.Angle(r.normal, Vector3.up) < maxStandAngle))
 			{
 				isGrounded = true;
 				saveMinorStandNormal(r.normal, Vector3.Angle (r.normal, Vector3.up));
@@ -213,7 +213,7 @@ public class MovementHandler : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z))
 		{
-			if (canJump && isGrounded)
+			if (canJump && isGrounded && externalMovementLock == false)
 			{
 				jump();
 			}
@@ -234,13 +234,13 @@ public class MovementHandler : MonoBehaviour
 	{
 		if (landed)
 		{
-			//setTrigger landed;
+			animator.SetTrigger ("Landed");
 			landed = false;
 		}
 
 		if (stopped)
 		{
-			//setTrigger stopped;
+			animator.SetTrigger ("Stopped");
 			stopped = false;
 		}
 
@@ -265,17 +265,10 @@ public class MovementHandler : MonoBehaviour
 			{
 				animState = AnimationState.State.Idle;
 			}
-			else if(Mathf.Abs(movement.x + movement.z) < (Time.deltaTime * moveSpeed / 3))
-			{
-				animState = AnimationState.State.Tiptoeing;
-			}
-			else if(Mathf.Abs(movement.x + movement.z) < (Time.deltaTime * moveSpeed /2))
-			{
-				animState = AnimationState.State.Walking;
-			}
 			else
 			{
 				animState = AnimationState.State.Running;
+				animator.ResetTrigger("Stopped");
 			}
 		}
 
@@ -315,15 +308,19 @@ public class MovementHandler : MonoBehaviour
 
 		else
 		{
-			if (lastY < -3f)
+			if (lastY < -1f)
 			{
 				movement.y = 0;
-				landed = true;
-				animator.SetTrigger("Landed");
+
 				if (lastY < maxFallSpeed * -0.75f)
 				{
+					landed = true;
 					externalMovementLock = true;
-					Invoke("revokeMoveLock", 0.25f);
+					Invoke("revokeMoveLock", 0.5f);
+				}
+				else
+				{
+					animator.SetTrigger("softLand");
 				}
 			}
 		}
@@ -350,10 +347,6 @@ public class MovementHandler : MonoBehaviour
 			if (Mathf.Abs(movement.x) + Mathf.Abs(movement.z) < 0.05f && lastXZ > Time.deltaTime * moveSpeed * 0.75f && isGrounded)
 			{
 				stopped = true;
-				if ()
-				{
-					animator.SetTrigger("Stopped");
-				}
 			}
 		}
 		else if (externalMovementLock == false && isSliding)

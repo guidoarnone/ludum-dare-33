@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5b383301a86fcc14d84323f249ca3e57
-timeCreated: 1440441187
+guid: f7762baff77242441bef15594695cf9e
+timeCreated: 1440444405
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -41,9 +41,9 @@ ModelImporter:
     100066: Bip001 Spine1
     100068: Bip001 Spine2
     100070: Box002
-    100072: Skin_ZSphere1
-    100074: Skin_ZSphere5
-    100076: //RootNode
+    100072: //RootNode
+    100074: Skin_ZSphere1
+    100076: Skin_ZSphere5
     400000: Bip001
     400002: Bip001 Footsteps
     400004: Bip001 Head
@@ -80,15 +80,15 @@ ModelImporter:
     400066: Bip001 Spine1
     400068: Bip001 Spine2
     400070: Box002
-    400072: Skin_ZSphere1
-    400074: Skin_ZSphere5
-    400076: //RootNode
+    400072: //RootNode
+    400074: Skin_ZSphere1
+    400076: Skin_ZSphere5
     2300000: Skin_ZSphere5
     3300000: Skin_ZSphere5
     4300000: Box002
     4300002: Skin_ZSphere5
     4300004: Skin_ZSphere1
-    7400000: Transformation
+    7400000: Landingv2
     9500000: //RootNode
     13700000: Box002
     13700002: Skin_ZSphere1
@@ -113,10 +113,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Transformation
+      name: Landingv2
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 87
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
