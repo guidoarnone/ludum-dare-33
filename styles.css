@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Tube";
+    src: url(./tube.otf) format("truetype");
+}
+
+body {
+  background-color: #45392A;
+	font-family: "Tube", Verdana, Tahoma;
+}
