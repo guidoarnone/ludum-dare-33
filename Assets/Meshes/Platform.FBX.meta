@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 284969a11f5622d4aa82a4d02cd61d87
-timeCreated: 1440405351
+guid: c8faedf99c6a0ff40ae0889d920e91db
+timeCreated: 1440436223
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -12,7 +12,7 @@ ModelImporter:
     4300000: Box001
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -54,7 +54,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
