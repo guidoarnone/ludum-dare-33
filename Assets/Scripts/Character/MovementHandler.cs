@@ -5,6 +5,7 @@ public class MovementHandler : MonoBehaviour
 {
 	CharacterController characterController;
 
+	public Animator anim;
 	public Transform lookAt;
 	public float moveSpeed;
 	public float groundedBias;
@@ -72,7 +73,7 @@ public class MovementHandler : MonoBehaviour
 	void Update ()
 	{
 		//Uncomment afetr adding Animator component
-		//animator = transform.GetComponent<Animator>;
+		animator = anim;
 
 		//DEBUG BLOCK
 		_Y = movement.y;
@@ -277,6 +278,8 @@ public class MovementHandler : MonoBehaviour
 				animState = AnimationState.State.Running;
 			}
 		}
+
+		animator.SetInteger ("State", (int)animState);
 	}
 
 	private void applyGravity ()
@@ -312,10 +315,11 @@ public class MovementHandler : MonoBehaviour
 
 		else
 		{
-			if (lastY < -1f)
+			if (lastY < -3f)
 			{
 				movement.y = 0;
 				landed = true;
+				animator.SetTrigger("Landed");
 				if (lastY < maxFallSpeed * -0.75f)
 				{
 					externalMovementLock = true;
@@ -346,6 +350,10 @@ public class MovementHandler : MonoBehaviour
 			if (Mathf.Abs(movement.x) + Mathf.Abs(movement.z) < 0.05f && lastXZ > Time.deltaTime * moveSpeed * 0.75f && isGrounded)
 			{
 				stopped = true;
+				if ()
+				{
+					animator.SetTrigger("Stopped");
+				}
 			}
 		}
 		else if (externalMovementLock == false && isSliding)
