@@ -135,11 +135,11 @@ public class MovementHandler : MonoBehaviour
 		{
 			float angle = 360f / checkRayNumber * i;
 			Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
-			Vector3 v = (transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 3f + characterController.radius * 1.2f * direction);
+			Vector3 v = (characterController.transform.position + Vector3.up * characterController.height / 2f + characterController.radius * 1.2f * direction);
 			checkRays[i] = v;
 		}
 		
-		checkRays[checkRayNumber] = transform.position + Vector3.down * characterController.height / 2 + Vector3.up * characterController.height / 3f;
+		checkRays[checkRayNumber] = characterController.transform.position + Vector3.up * characterController.height / 2f;
 		Vector3 dir = Vector3.down;
 		
 		standNormalAngle = 180f;
