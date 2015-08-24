@@ -8,9 +8,9 @@ public class CameraController : MonoBehaviour
 	public static CameraController Instance;
 	public int collisionLayermask = 10;
 	public Transform TargetLookAt;
-	public float Distance = 10.0f;
-	public float DistanceMin = 2f;
-	public float DistanceMax = 10f;
+	public float Distance = 2f;
+	public float DistanceMin = 1f;
+	public float DistanceMax = 3f;
 	public float DistanceSmooth = 0.05f;
 	public float DistanceResumeSmooth = 1f;
 
