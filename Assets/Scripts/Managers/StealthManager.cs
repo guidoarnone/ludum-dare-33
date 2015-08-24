@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StealthManager : MonoBehaviour {
 
+	public StealthAnimation SA;
 	private static StealthManager self;
 	public const KeyCode hideKey = KeyCode.Q;
 	private StealthState hidden;
@@ -26,12 +27,13 @@ public class StealthManager : MonoBehaviour {
 
 	public void hide(GameObject hideObject) {
 		hidden = StealthState.TRANSITION;
-		GameManager.getInstance ().character.GetComponent<StealthAnimation> ().hide (hideObject);
+		Debug.Log (hideObject.name);
+		SA.hide (hideObject);
 	}
 
 	public void show() {
 		hidden = StealthState.TRANSITION;
-		GameManager.getInstance ().character.GetComponent<StealthAnimation> ().show ();
+		SA.show ();
 	}
 
 	public void setHidden(StealthState s) {

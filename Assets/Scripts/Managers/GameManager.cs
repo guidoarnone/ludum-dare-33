@@ -5,6 +5,10 @@ public class GameManager : MonoBehaviour {
 
 	//Enviroment Variables
 	public GameObject character;
+	public SkinnedMeshRenderer body;
+	public SkinnedMeshRenderer scarf;
+	public MeshRenderer horns;
+
 	public const string CHARACTER_TAG = "Character";
 
 	private static GameManager self;
@@ -26,12 +30,26 @@ public class GameManager : MonoBehaviour {
 	}
 
 	//TODO
-	public void killCharacter() {
+	public void killCharacter(float t) {
 		Debug.Log ("killed!");
-		if (StealthManager.getInstance ().isHidden ()) {
-			StealthManager.getInstance ().show();
+
+		if (!MovementHandler.getInstance().checkIfDead())
+		{
+			if (StealthManager.getInstance ().isHidden ()) 
+			{
+				StealthManager.getInstance ().show();
+			}
+
+			MovementHandler.getInstance ().setMovementLock (true);
+			MovementHandler.getInstance ().playDeath ();
+			Invoke ("actuallyKill", t);
 		}
+	}
+
+	private void actuallyKill()
+	{
 		this.resetPositionToLastCheckpoint ();
+		MovementHandler.getInstance ().playRespawn();
 	}
 
 	private void resetPositionToLastCheckpoint() {

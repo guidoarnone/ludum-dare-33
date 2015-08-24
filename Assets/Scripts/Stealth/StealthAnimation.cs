@@ -7,22 +7,31 @@ public class StealthAnimation : MonoBehaviour {
 
 	public void hide(GameObject hideObject) {
 		MovementHandler.getInstance ().setMovementLock (true);
+		MovementHandler.getInstance ().anim.SetTrigger ("Transformation");
 		this.hideObject = hideObject;
-		//TODO: animation logic
 	}
 
 	public void show() {
 		Destroy (hideObject);
 		//TODO: particles
-		GameManager.getInstance ().character.GetComponent<MeshRenderer> ().enabled = true;
+		GameManager.getInstance ().scarf.enabled = true;
+		GameManager.getInstance ().body.enabled = true;
+		GameManager.getInstance ().horns.enabled = true;
 		MovementHandler.getInstance ().setMovementLock (false);
+		Invoke ("delayThingy", 1f);
+	}
+
+	private void delayThingy()
+	{
 		StealthManager.getInstance().setHidden(StealthState.PLAINSIGHT);
 	}
 
 	//Triggered from animation
 	public void postAnimationHide() {
 		//TODO: particles
-		GameManager.getInstance ().character.GetComponent<MeshRenderer> ().enabled = false;
+		GameManager.getInstance ().scarf.enabled = false;
+		GameManager.getInstance ().body.enabled = false;
+		GameManager.getInstance ().horns.enabled = false;
 		hideObject = (GameObject)Instantiate(hideObject, GameManager.getInstance ().character.transform.position, Quaternion.identity);
 		StealthManager.getInstance().setHidden(StealthState.HIDDEN);
 	}

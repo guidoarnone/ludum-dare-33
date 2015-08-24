@@ -5,6 +5,6 @@ public class DieActivable : MonoBehaviour, Activable
 {
 	public void activate() 
 	{
-		GameManager.getInstance ().killCharacter();
+		GameManager.getInstance ().killCharacter(2f);
 	}
 }

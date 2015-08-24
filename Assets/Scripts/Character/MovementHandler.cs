@@ -34,6 +34,7 @@ public class MovementHandler : MonoBehaviour
 	private bool canMove;
 
 	private bool isMoving;
+	private bool isDead;
 	private bool isGrounded;
 	private bool isJumping;
 	private bool isSliding;
@@ -340,7 +341,7 @@ public class MovementHandler : MonoBehaviour
 
 	private void move()
 	{
-		if (isMoving)
+		if (isMoving && externalMovementLock == false)
 		{
 		Vector3 nonYMovement = new Vector3 (movement.x, 0, movement.z);
 		transform.LookAt (transform.position + nonYMovement);
@@ -358,6 +359,12 @@ public class MovementHandler : MonoBehaviour
 		{
 			Vector3 slideMove = new Vector3(standNormal.x, -standNormalAngle / 10f, standNormal.z) / Mathf.Sqrt(standNormalAngle) * 5;
 			characterController.Move(slideMove * Time.deltaTime * moveSpeed);
+		}
+
+		else
+		{
+			Vector3 fall = new Vector3(0, movement.y, 0);
+			characterController.Move(fall * Time.deltaTime * moveSpeed);
 		}
 
 		lastXZ = Mathf.Abs(movement.x) + Mathf.Abs(movement.z);
@@ -404,6 +411,34 @@ public class MovementHandler : MonoBehaviour
 	public void setMovementLock(bool b)
 	{
 		externalMovementLock = b;
+	}
+
+	public void playDeath()
+	{
+		isDead = true;
+		animator.SetTrigger ("Death");
+	}
+
+	public void playRespawn()
+	{
+		animator.SetTrigger ("Respawn");
+		Invoke ("allowMove" ,2f);
+	}
+
+	public bool checkIfDead()
+	{
+		return isDead;
+	}
+
+	public void endDeathAnim()
+	{
+		Debug.Log ("stuff");
+	}
+
+	private void allowMove ()
+	{
+		isDead = false;
+		setMovementLock (false);
 	}
 
 	public void deathTrigger(string cause)
