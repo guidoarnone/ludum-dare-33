@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f174df2a071f9934783f4f2a17b4095f
-timeCreated: 1440383118
+guid: d9e9fd3afcb12f54886494b950705258
+timeCreated: 1440402987
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -17,9 +17,10 @@ ModelImporter:
     3300002: Sphere001
     4300000: Sphere001
     4300002: Object004
+    7400000: Take 001
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:

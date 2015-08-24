@@ -1,42 +1,80 @@
 fileFormatVersion: 2
-guid: 548cf15ced834f44a809fc1d42b310e5
-timeCreated: 1440379655
+guid: f6c36b2d0116aec4b944631d4af2b77d
+timeCreated: 1440408486
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Bases
-    100002: Candle
-    100004: CandleCosito
-    100006: //RootNode
-    100008: Metal
-    100010: Particle View 001
-    100012: Vials
-    400000: Bases
-    400002: Candle
-    400004: CandleCosito
-    400006: //RootNode
-    400008: Metal
-    400010: Particle View 001
-    400012: Vials
-    2300000: Bases
-    2300002: Candle
-    2300004: CandleCosito
-    2300006: Metal
-    2300008: Vials
-    3300000: Bases
-    3300002: Candle
-    3300004: CandleCosito
-    3300006: Metal
-    3300008: Vials
-    4300000: Vials
-    4300002: Metal
-    4300004: Bases
-    4300006: Candle
-    4300008: CandleCosito
+    100000: Box002
+    100002: Box003
+    100004: Box004
+    100006: Circle001
+    100008: Cylinder001
+    100010: Cylinder006
+    100012: //RootNode
+    100014: Object004
+    100016: Object005
+    100018: Object007
+    100020: Sphere001
+    100022: Sphere002
+    100024: Sphere003
+    100026: Sphere004
+    400000: Box002
+    400002: Box003
+    400004: Box004
+    400006: Circle001
+    400008: Cylinder001
+    400010: Cylinder006
+    400012: //RootNode
+    400014: Object004
+    400016: Object005
+    400018: Object007
+    400020: Sphere001
+    400022: Sphere002
+    400024: Sphere003
+    400026: Sphere004
+    2300000: Box002
+    2300002: Box003
+    2300004: Box004
+    2300006: Circle001
+    2300008: Cylinder001
+    2300010: Cylinder006
+    2300012: Object004
+    2300014: Object005
+    2300016: Object007
+    2300018: Sphere001
+    2300020: Sphere002
+    2300022: Sphere003
+    2300024: Sphere004
+    3300000: Box002
+    3300002: Box003
+    3300004: Box004
+    3300006: Circle001
+    3300008: Cylinder001
+    3300010: Cylinder006
+    3300012: Object004
+    3300014: Object005
+    3300016: Object007
+    3300018: Sphere001
+    3300020: Sphere002
+    3300022: Sphere003
+    3300024: Sphere004
+    4300000: Cylinder001
+    4300002: Sphere001
+    4300004: Sphere002
+    4300006: Circle001
+    4300008: Object004
+    4300010: Object005
+    4300012: Cylinder006
+    4300014: Object007
+    4300016: Sphere003
+    4300018: Sphere004
+    4300020: Box002
+    4300022: Box003
+    4300024: Box004
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -78,7 +116,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []

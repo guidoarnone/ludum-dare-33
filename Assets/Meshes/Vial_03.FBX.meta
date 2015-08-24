@@ -1,60 +1,45 @@
 fileFormatVersion: 2
-guid: 4282481a66dc85b4db641df7043cf30e
-timeCreated: 1440366957
+guid: bd79270b3fba23844a400ef7dfcd34ac
+timeCreated: 1440404156
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Container
-    100002: Cork1
-    100004: Cork2
-    100006: Cork3
-    100008: Cork4
-    100010: //RootNode
-    100012: Vial1
-    100014: Vial2
-    100016: Vial3
-    100018: Vial4
-    400000: Container
-    400002: Cork1
-    400004: Cork2
-    400006: Cork3
-    400008: Cork4
-    400010: //RootNode
-    400012: Vial1
-    400014: Vial2
-    400016: Vial3
-    400018: Vial4
-    2300000: Container
-    2300002: Cork1
-    2300004: Cork2
-    2300006: Cork3
-    2300008: Cork4
-    2300010: Vial1
-    2300012: Vial2
-    2300014: Vial3
-    2300016: Vial4
-    3300000: Container
-    3300002: Cork1
-    3300004: Cork2
-    3300006: Cork3
-    3300008: Cork4
-    3300010: Vial1
-    3300012: Vial2
-    3300014: Vial3
-    3300016: Vial4
+    100000: Cork005
+    100002: Object001
+    100004: Vial1
+    100006: Vial2
+    100008: Vial3
+    100010: Vial4
+    100012: //RootNode
+    400000: Cork005
+    400002: Object001
+    400004: Vial1
+    400006: Vial2
+    400008: Vial3
+    400010: Vial4
+    400012: //RootNode
+    2300000: Cork005
+    2300002: Object001
+    2300004: Vial1
+    2300006: Vial2
+    2300008: Vial3
+    2300010: Vial4
+    3300000: Cork005
+    3300002: Object001
+    3300004: Vial1
+    3300006: Vial2
+    3300008: Vial3
+    3300010: Vial4
     4300000: Vial1
-    4300002: Cork1
-    4300004: Vial2
-    4300006: Cork2
-    4300008: Vial3
-    4300010: Cork3
-    4300012: Vial4
-    4300014: Cork4
-    4300016: Container
+    4300002: Vial2
+    4300004: Vial3
+    4300006: Vial4
+    4300008: Cork005
+    4300010: Object001
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -96,7 +81,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
