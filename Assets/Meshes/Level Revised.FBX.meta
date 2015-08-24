@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 69f37d2ea882e534c9c3f16f80890933
-timeCreated: 1440295404
+guid: 6bc84bb17606560409eff1ad1fc7390b
+timeCreated: 1440381245
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: EVIL_ALIEN_LOW_
+    4300000: Cuarto
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -54,7 +55,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
