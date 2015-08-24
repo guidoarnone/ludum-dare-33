@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//UGLY CODE WARNING :'(
-
 public class CameraController : MonoBehaviour 
 {
 	public static CameraController Instance;
-	public int collisionLayermask = 10;
+	public int collisionLayermask = 8;
 	public Transform TargetLookAt;
 	public float Distance = 2f;
 	public float DistanceMin = 1f;
-	public float DistanceMax = 3f;
+	public float DistanceMax = 2.5f;
 	public float DistanceSmooth = 0.05f;
 	public float DistanceResumeSmooth = 1f;
 
@@ -29,10 +27,10 @@ public class CameraController : MonoBehaviour
 	public float X_ControllerSensitivity = 2.0f;
 	public float Y_ControllerSensitivity = 2.0f;
 	public float MouseWheelSensitivity = 15.0f;
-	public float Y_MinLimit = 5f; //5
-	public float Y_MaxLimit = 80.0f; //80
-	public float OcclusionDistanceStep = 0.1f;
-	public int MaxOcclusionChecks = 100;
+	public float Y_MinLimit = 5f;
+	public float Y_MaxLimit = 80.0f;
+	public float OcclusionDistanceStep = 0.01f;
+	public int MaxOcclusionChecks = 5;
 
 	private float distanceSmooth = 0f;
 	private float PreOccludedDistance = 0f;
@@ -60,7 +58,8 @@ public class CameraController : MonoBehaviour
 		HandlePlayerInput ();
 		
 		int counter = 0;
-		
+		DesiredDistance = Mathf.Clamp (DesiredDistance, DistanceMin, DistanceMax);
+
 		do
 		{
 			CalculateDesiredPosition ();
