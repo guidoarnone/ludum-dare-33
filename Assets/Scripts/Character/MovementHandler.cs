@@ -422,7 +422,7 @@ public class MovementHandler : MonoBehaviour
 	public void playRespawn()
 	{
 		animator.SetTrigger ("Respawn");
-		Invoke ("allowMove" ,2f);
+		Invoke ("allowMove" ,4f);
 	}
 
 	public bool checkIfDead()
