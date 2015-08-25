@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StealthAnimation : MonoBehaviour {
 
+	public GameObject particles;
 	private GameObject hideObject;
 
 	public void hide(GameObject hideObject) {
@@ -13,7 +14,7 @@ public class StealthAnimation : MonoBehaviour {
 
 	public void show() {
 		Destroy (hideObject);
-		//TODO: particles
+		Instantiate (particles, transform.position, Quaternion.identity);
 		GameManager.getInstance ().scarf.enabled = true;
 		GameManager.getInstance ().body.enabled = true;
 		GameManager.getInstance ().horns.enabled = true;
@@ -28,7 +29,7 @@ public class StealthAnimation : MonoBehaviour {
 
 	//Triggered from animation
 	public void postAnimationHide() {
-		//TODO: particles
+		Instantiate (particles, transform.position, Quaternion.identity);
 		GameManager.getInstance ().scarf.enabled = false;
 		GameManager.getInstance ().body.enabled = false;
 		GameManager.getInstance ().horns.enabled = false;
